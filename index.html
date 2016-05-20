@@ -13,8 +13,6 @@
     <script type="text/javascript" src="three.min.js"></script>
     <script type="text/javascript" src="functionList.js"></script>
     <script type="text/javascript" src="fileLink.js"></script>
-    <!--<script type="text/javascript" src="thview_soundGSV.js"></script>-->
-    <!--<script type="text/javascript" src="thview.js"></script>-->
 
     <script type="text/javascript">
         /* 結果を保持する配列 */
@@ -29,7 +27,7 @@
         var ptnPlaying = 0;  // パターン選択回答用
         var ptnAsking = 1;   // 移動有無回答用
         var AnsFill = 0;
-        var audioFile = new Array();
+        var audioFile1 = new Array();
         var point = new Array();
         point[0] = new Array();
         point[0][1] = new Array("111", "110", "100", "101", "001", "011", "010", "000");   // Humming
@@ -68,19 +66,19 @@
         point[11][1] = new Array("111", "011", "001", "101", "100", "110", "010", "000");   // Humming
         point[11][0] = new Array("111", "110", "101", "011", "001", "010", "100", "000");   // 音源減っていく
                 
-        var audioFile = new Array();
-        audioFile[0]  = "sound/outside/1c/1c_sw";
-        audioFile[1]  = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile[2]  = "sound/outside/2b/2b_sw";
-        audioFile[3]  = "sound/outside/1b/1b_sw";
-        audioFile[4]  = audioFile[1]
-        audioFile[5] = "sound/outside/2c/2c_sw";
-        audioFile[6]  = audioFile[1];
-        audioFile[7]  = audioFile[1];
-        audioFile[8]  = audioFile[5];
-        audioFile[9]  = audioFile[0];
-        audioFile[10] = audioFile[2];
-        audioFile[11] = audioFile[3];
+        var audioFile1 = new Array();
+        audioFile1[0]  = "sound/outside/1c/1c_sw";
+        audioFile1[1]  = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile1[2]  = "sound/outside/2b/2b_sw";
+        audioFile1[3]  = "sound/outside/1b/1b_sw";
+        audioFile1[4]  = audioFile1[1]
+        audioFile1[5] = "sound/outside/2c/2c_sw";
+        audioFile1[6]  = audioFile1[1];
+        audioFile1[7]  = audioFile1[1];
+        audioFile1[8]  = audioFile1[5];
+        audioFile1[9]  = audioFile1[0];
+        audioFile1[10] = audioFile1[2];
+        audioFile1[11] = audioFile1[3];
         var array = new Array();
 
         // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
