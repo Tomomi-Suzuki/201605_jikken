@@ -11,17 +11,19 @@
 
     <script src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="three.min.js"></script>
+    <script type="text/javascript" src="usefulFunction.js"></script>
     <script type="text/javascript" src="functionList.js"></script>
     <script type="text/javascript" src="fileLink.js"></script>
 
     <script type="text/javascript">
         var DEBUG_MODE = true;
 
-        var trialNum = 20;
+        var trialNum = new Array(10, 10);
+        var trialTotal = arraySum(trialNum);
 
         /* Array to store answers */
         var selectAns = new Array();
-        for (var n = 0; n < trialNum; ++n) {
+        for (var n = 0; n < trialTotal; ++n) {
             selectAns[n] = new Array();
         }
 
@@ -129,7 +131,7 @@
     <!-- <<Data 1>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 1. 女性の声が最も聞き取りやすいものをそれぞれ選んでください</h3>
-    <!--音の再生・選択-->
+    <!--Play sounds-->
     <table border="1" width="700" height="70">
         <tr>
             <!--#1-->
@@ -144,7 +146,7 @@
             </td>
         </tr>
     </table>
-    <!--評価回答-->
+    <!--Naturality evalation-->
     <form name="selectbox">
         <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
         <select id="selectNtr01" onchange="saveAns2Array1(1)">
@@ -153,7 +155,7 @@
             <option value="2">#2</option>
         </select>
     </form>
-    <!--結果を書き込み-->
+    <!--Save answer in array saving txt-->
     <button onclick="saveArrayVal1();">Answer1 Save</button>
     <a id="saveArray" href=""></a>
     <p class="ls_normal"></p>

@@ -1,9 +1,3 @@
-function debugShowLog(value) {
-    if (DEBUG_MODE == true) {
-        console.log(value)
-    }
-}
-
 function iniFunc() {
     loadSound1(0);
     loadSound1(1);
@@ -165,7 +159,7 @@ function saveAns2Array1() {
     }
     if (AnsFill == 1) {
         filePlaying = filePlaying + 1;
-        if (filePlaying < trialNum) {
+        if (filePlaying < trialNum[0]) {
             loadSound1(0);
             loadSound1(1);
         }
@@ -206,7 +200,7 @@ function saveArrayVal1() {
     }
     if (AnsFill == 1) {
         filePlaying = filePlaying + 1;
-        if (filePlaying < trialNum) {
+        if (filePlaying < trialNum[0]) {
             loadSound1(0);
             loadSound1(1);
         }
