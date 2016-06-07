@@ -6,33 +6,10 @@ function iniFunc() {
         loadSound2(0);
         loadSound2(1);
     }
-    
+
 }
 
-//// Play/Pauseボタンを押すと再生，一時停止のときにはselectAnsに記録
-//function AudioButtonFunc() {
-//    if (audioPlaying0 == false) {
-//        for (var i = 0; i < array.length; ++i) {
-//            array[i].loop = true;
-//            array[i].play();
-//        }
-//        for (var i = 0; i < array.length; ++i) {
-//            array[i].volume = 0;
-//        }
-//        array[playNum].volume = 1.0;
-//        audioPlaying0 = true;
-//        ptnAsking = ptnPlaying + 1;
-//    } else {
-//        for (var i = 0; i < array.length; ++i) {
-//            array[i].pause();
-//        }
-//        audioPlaying0 = false;
-//        // 念のため記録
-//        selectAns[filePlaying][ptnPlaying] = point[filePlaying][ptnPlaying][playNum];
-//    }   // END if audioPlaying0
-//}   // END AudioButtonFunc
-
-// Play/Pauseボタンを押すと再生，一時停止のときにはselectAnsに記録
+// Play/Pause when "Play/Pause" button
 function AudioButtonFunc1(n_audio) {
     if (audioPlaying[n_audio] == false) {
         audioArray1[n_audio].loop = true;
@@ -55,25 +32,24 @@ function AudioButtonFunc2(n_audio) {
         for (var n = 0; n < ptnNum; ++n) {
             audioArray2[n_audio][n].volume = 0;
         }
-        audioArray2[n_audio][playNum].volume = 1.0;
+        audioArray2[n_audio][playNum[n_audio]].volume = 1.0;
         audioPlaying[n_audio] = true;
     } else {
         for (var n = 0; n < ptnNum; ++n) {
-            audioArray2[n_audio].pause();
+            audioArray2[n_audio][n].pause();
         }
         audioPlaying[n_audio] = false;
     }   // END if audioPlaying0
 }   // END AudioButtonFunc
 
-// カーソル位置変更 => 音ファイル切り替え
-function ChangeVolume() {
-    /* playNum: 再生するファイル番号 */
-    for (var i = 0; i < array.length; ++i) {
-        if (i == playNum) {
-            array[i].volume = 1.0;
-            console.log(i)
+// Change sound file when slider moves
+function ChangeVolume(n_audio) {
+    for (var n = 0; n < ptnNum; ++n) {
+        if (n == playNum[n_audio]) {
+            audioArray2[n_audio][n].volume = 1.0;
+            debugShowLog(n);
         } else {
-            array[i].volume = 0.0;
+            audioArray2[n_audio][n].volume = 0.0;
         }
     }
 }
@@ -95,81 +71,55 @@ function loadSound2(n_audio) {
     }
 }
 
-// 矢印キーで再生ファイルを切り替え
-function KeyDownFunc(inEvent) {
-    //    if (inEvent.keyCode == 37) {   // "←"が押されたとき
-    //        playNum = playNum - 1;
-    //        if (playNum < 0) {
-    //            playNum = 0;
-    //        }
-    //        ChangeVolume();
-    //    }   // if (inEvent.keyCode == 37) END
-    //    else if (inEvent.keyCode == 39) {   // "→"が押されたとき
-    //        playNum = playNum + 1;
-    //        if (playNum > array.length - 1) {
-    //            playNum = array.length - 1;
-    //        }   // if (playNum > array.length-1) END
-    //        ChangeVolume();
-    //    }   // else if (inEvent.keyCode == 39) END
-}   // END function KeyDownFunc
-
 // OKボタンを押すと選んだ選択肢が保存され，ptnPlayingが切り替わる
-function OkButtonFunc() {
-    for (var i = 0; i < array.length; ++i) {
-        array[i].pause();
-    }
-    selectAns[filePlaying][ptnPlaying] = point[filePlaying][ptnPlaying][playNum];
-    if (ptnPlaying == 0) {
-        ptnPlaying = 1;
-        if (selectAns[filePlaying][ptnPlaying] == null) {
-            playNum = 0;
-            loadSound();
-        }
-    } else if (ptnPlaying == 1) {
-        ptnPlaying = 0;
-        if (selectAns[filePlaying][ptnPlaying] == null) {
-            playNum = 0;
-            loadSound();
-        }
-    }   // END if ptnPlaying
-
-}   // END OkButtonFunc
-
-// 選択肢が選ばれたら回答を記録
-//function saveAnsFunc(n_q) {
-//    var n_q;
-//    var fileAns = filePlaying + 1;
-//    if (fileAns < 10) {
-//        var nameEf = "selectEf0" + fileAns;
-//        //var nameMv = "selectMv0" + fileAns;
-//    } else {
-//        var nameEf = "selectEf" + fileAns;
-//        //var nameMv = "selectMv" + fileAns;
+//function OkButtonFunc() {
+//    for (var i = 0; i < array.length; ++i) {
+//        array[i].pause();
 //    }
-//    //nameMv = nameMv + "_" + ptnAsking;
-//    var idEf = document.getElementById(nameEf);
-//    //var idMv = document.getElementById(nameMv);
-//    if (n_q == 1) {
-//        selectAns[filePlaying][2] = idEf.options[idEf.selectedIndex].value;
-//        //} else if (n_q == 2) {
-//        //    selectAns[filePlaying][3 + ptnPlaying] = idMv.options[idMv.selectedIndex].value;
-//    }
-//}   // END saveAnsFunc
+//    selectAns[filePlaying][ptnPlaying] = point[filePlaying][ptnPlaying][playNum];
+//    if (ptnPlaying == 0) {
+//        ptnPlaying = 1;
+//        if (selectAns[filePlaying][ptnPlaying] == null) {
+//            playNum = 0;
+//            loadSound();
+//        }
+//    } else if (ptnPlaying == 1) {
+//        ptnPlaying = 0;
+//        if (selectAns[filePlaying][ptnPlaying] == null) {
+//            playNum = 0;
+//            loadSound();
+//        }
+//    }   // END if ptnPlaying
+
+//}   // END OkButtonFunc
 
 // Save answers in array
 function saveAns2Array1() {
-    var n_q = 1;
     var fileAns = filePlaying + 1;
     if (fileAns < 10) {
-        var nameNtr = "selectNtr0" + fileAns;
+        var nameOpt = "selectNtr0" + fileAns;
     } else {
-        var nameNtr = "selectNtr" + fileAns;
+        var nameOpt = "selectNtr" + fileAns;
     }
-    var idNtr = document.getElementById(nameNtr);
-    if (n_q == 1) {
-        selectAns[filePlaying][0] = idNtr.options[idNtr.selectedIndex].value;
-        debugShowLog(selectAns[filePlaying]);
+    debugShowLog(nameOpt);
+    var idOpt = document.getElementById(nameOpt);
+    selectAns[filePlaying][0] = idOpt.options[idOpt.selectedIndex].value;
+    debugShowLog(selectAns[filePlaying]);
+}   // END saveAnsFunc
+function saveAns2Array2() {
+    var fileAns = filePlaying + 1;
+    if (fileAns < 10) {
+        var nameOpt = "selectEf0" + fileAns;
+    } else {
+        var nameOpt = "selectEf" + fileAns;
     }
+    debugShowLog(nameOpt);
+    var idOpt = document.getElementById(nameOpt);
+    selectAns[filePlaying][0] = idOpt.options[idOpt.selectedIndex].value;
+    for (var n = 0; n < cmpNum; ++n) {
+        selectAns[filePlaying][n + 1] = playNum[n];
+    }
+    debugShowLog(selectAns[filePlaying]);
 }   // END saveAnsFunc
 
 // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
@@ -195,24 +145,42 @@ function saveAns2Array1() {
 //}   // END saveAnsFunc
 
 // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
-function saveArrayVal1() {
-    for (var n = 0; n < 1; ++n) {
+function saveArrayVal1(n_type) {
+    var AnsFill = 0;
+    for (var n = 0; n < quesNum[n_type]; ++n) {
         if (selectAns[filePlaying][n] != null) {
             AnsFill = AnsFill + 1;
         }
     }
-    if (AnsFill == 1) {
+    if (AnsFill == quesNum[n_type]) {
         filePlaying = filePlaying + 1;
-        if (filePlaying < trialNum[0]) {
+        if (filePlaying < trialNum[n_type]) {
             loadSound1(0);
             loadSound1(1);
-        } if (filePlaying == trialNum[0]) {
+        } if (filePlaying == trialNum[n_type]) {
             iniFunc();
         }
     } else {
         alert("Select answer!");
     }
-    AnsFill = 0;
+}   // END saveAnsFunc
+function saveArrayVal2(n_type) {
+    var AnsFill = 0;
+    for (var n = 0; n < quesNum[n_type]; ++n) {
+        if (selectAns[filePlaying][n] != null) {
+            AnsFill = AnsFill + 1;
+        }
+    }
+    debugShowLog(AnsFill);
+    if (AnsFill == quesNum[n_type]) {
+        filePlaying = filePlaying + 1;
+        if (filePlaying < arraySum(trialNum)) {
+            loadSound2(0);
+            loadSound2(1);
+        }
+    } else {
+        alert("Select answer!");
+    }
 }   // END saveAnsFunc
 
 // 回答をファイルにして保存
@@ -226,18 +194,16 @@ function saveFunc() {
     }
 }   // END saveFunc
 
-// スライダーが動かされたら選んでいる場所を表示
-function showValue() {
-    var fileNum = filePlaying + 1;
-    var ptnNum = ptnPlaying + 1;
-    if (fileNum < 10) {
-        var nameSld = "slider0" + fileNum;
+// Show slider position
+function showValue(n_audio) {
+    var fileAns = filePlaying + 1;
+    if (fileAns < 10) {
+        var nameSld = "slider0" + fileAns;
     } else {
-        var nameSld = "slider" + fileNum;
+        var nameSld = "slider" + fileAns;
     }
-    nameSld = nameSld + "_" + ptnNum;
+    nameSld = nameSld + "_" + n_audio;
     var idSld = document.getElementById(nameSld);
-    playNum = idSld.value;
-    console.log(idSld.value);
-    ChangeVolume();
+    playNum[n_audio] = idSld.value;
+    ChangeVolume(n_audio);
 }
