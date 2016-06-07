@@ -18,7 +18,8 @@
     <script type="text/javascript">
         var DEBUG_MODE = true;
 
-        var trialNum = new Array(10, 10);
+        //var trialNum = new Array(10, 10);
+        var trialNum = new Array(1, 1);
         var trialTotal = arraySum(trialNum);
 
         /* Array to store answers */
@@ -30,50 +31,22 @@
         /* Load sound files */
         var audioPlaying = new Array(false, false);
         var filePlaying = 0;
-        var playNum = 0;
+        var playNum = new Array(0, 0);
         var ptnPlaying = 0;  // パターン選択回答用
         var ptnAsking = 1;   // 移動有無回答用
         var AnsFill = 0;
 
         var point = new Array();
         point[0] = new Array();
-        point[0][1] = new Array("111", "110", "100", "101", "001", "011", "010", "000");   // Humming
-        point[0][0] = new Array("111", "101", "110", "011", "010", "001", "100", "000");   // 音源減っていく
         point[1] = new Array();
-        point[1][0] = new Array("111", "011", "001", "101", "100", "110", "010", "000");   // Humming
-        point[1][1] = new Array("111", "110", "101", "011", "001", "010", "100", "000");   // 音源減っていく
-        point[2] = new Array();
-        point[2][1] = new Array("111", "110", "010", "011", "001", "101", "100", "000");   // Humming
-        point[2][0] = new Array("111", "110", "011", "101", "001", "100", "010", "000");   // 音源減っていく
-        point[3] = new Array();
-        point[3][0] = new Array("111", "110", "010", "011", "001", "101", "100", "000");   // Humming
-        point[3][1] = new Array("111", "011", "101", "110", "100", "010", "001", "000");   // 音源減っていく
-        point[4] = new Array();
-        point[4][0] = new Array("111", "101", "100", "110", "010", "011", "001", "000");   // Humming
-        point[4][1] = new Array("111", "101", "011", "110", "010", "100", "001", "000");   // 音源減っていく
-        point[5] = new Array();
-        point[5][1] = new Array("111", "011", "010", "110", "100", "101", "001", "000");   // Humming
-        point[5][0] = new Array("111", "011", "110", "101", "100", "001", "010", "000");   // 音源減っていく
-        point[6] = new Array();
-        point[6][1] = new Array("111", "011", "010", "110", "100", "101", "001", "000");   // Humming
-        point[6][0] = new Array("111", "110", "011", "101", "001", "100", "010", "000");   // 音源減っていく
-        point[7] = new Array();
-        point[7][1] = new Array("111", "101", "100", "110", "010", "011", "001", "000");   // Humming
-        point[7][0] = new Array("111", "011", "110", "101", "100", "001", "010", "000");   // 音源減っていく
-        point[8] = new Array();
-        point[8][0] = new Array("111", "101", "001", "011", "010", "110", "100", "000");   // Humming
-        point[8][1] = new Array("111", "101", "011", "110", "010", "100", "001", "000");   // 音源減っていく
-        point[9] = new Array();
-        point[9][0] = new Array("111", "101", "001", "011", "010", "110", "100", "000");   // Humming
-        point[9][1] = new Array("111", "101", "110", "011", "010", "001", "100", "000");   // 音源減っていく
-        point[10] = new Array();
-        point[10][0] = new Array("111", "110", "100", "101", "001", "011", "010", "000");   // Humming
-        point[10][1] = new Array("111", "011", "101", "110", "100", "010", "001", "000");   // 音源減っていく
-        point[11] = new Array();
-        point[11][1] = new Array("111", "011", "001", "101", "100", "110", "010", "000");   // Humming
-        point[11][0] = new Array("111", "110", "101", "011", "001", "010", "100", "000");   // 音源減っていく
-        
-        /* Names of sound files for comparison of naturality */
+        point[0][0] = new Array("111", "110", "100", "101", "001", "011", "010");
+        point[1][0] = new Array("111", "101", "110", "011", "010", "001", "100");
+        point[0][1] = new Array("111", "010", "100", "101", "001", "011", "110");
+        point[1][1] = new Array("111", "001", "110", "011", "010", "101", "100");
+        var ptnNum = point[0][0].length;
+
+        /* Names of sound files */
+        //for comparison of naturality
         var audioFile1 = new Array();
         audioFile1[0] = new Array();
         audioFile1[1] = new Array();
@@ -81,11 +54,21 @@
         audioFile1[1][0] = "sound/ALPstream/outside/1c/1c_111_100_001_101_011_110_010";
         audioFile1[0][1] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
         audioFile1[1][1] = "sound/ALPstream/outside/1c/1c_111_100_001_101_011_110_010";
-        /* Arrays to play sound files for comparison of naturality */
+        //for comparison of naturality
+        var audioFile2 = new Array();
+        audioFile2[0] = new Array();
+        audioFile2[1] = new Array();
+        audioFile2[0][0] = "sound/outside/1c/1c_sw";
+        audioFile2[1][0] = "sound/outside/1c/1c_sw";
+        /* Arrays to play sound files */
+        //for comparison of naturality
         var audioArray1 = new Array();
         audioArray1[0] = new Array();
         audioArray1[1] = new Array();
-
+        //for comparison of easiness to find
+        var audioArray2 = new Array();
+        audioArray2[0] = new Array();
+        audioArray2[1] = new Array();
         var array = new Array();
 
         // ------------------------------------------------------------
@@ -157,6 +140,42 @@
     </form>
     <!--Save answer in array saving txt-->
     <button onclick="saveArrayVal1();">Answer1 Save</button>
+    <a id="saveArray" href=""></a>
+    <p class="ls_normal"></p>
+
+    <!-- <<Data 11>>------------------------------------------------------------------------------------------- -->
+    <hr align="left" width="1100" color="#ffc8c8">
+    <h3 style="padding-left:10pt">Data 1. 女性の声が最も聞き取りやすいものをそれぞれ選んでください</h3>
+    <!--音の再生・選択-->
+    <table border="1" width="700" height="70">
+        <tr>
+            <!--#1-->
+            <td>
+                <script language="JavaScript">document.write("#1".bold())</script>
+                <button style="width: 70px; height: 50px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <input id="slider11_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue(0)" />
+                <button style="width: 50px; height: 30px" onclick="OkButtonFunc()">OK!</button>
+            </td>
+            <!--#2-->
+            <td>
+                <script language="JavaScript">document.write("#2".bold())</script>
+                <button style="width: 70px; height: 50px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <input id="slider11_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue(1)" />
+                <button style="width: 50px; height: 30px" onclick="OkButtonFunc()">OK!</button>
+            </td>
+        </tr>
+    </table>
+    <!--評価回答-->
+    <form name="selectbox">
+        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <select id="selectEf01" onchange="saveAnsFunc(1)">
+            <option value="">*選んでください</option>
+            <option value="1">#1</option>
+            <option value="2">#2</option>
+        </select>
+    </form>
+    <!--結果を書き込み-->
+    <button onclick="saveArrayFunc();">Answer1 Save</button>
     <a id="saveArray" href=""></a>
     <p class="ls_normal"></p>
     

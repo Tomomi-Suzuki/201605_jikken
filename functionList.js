@@ -1,6 +1,12 @@
 function iniFunc() {
-    loadSound1(0);
-    loadSound1(1);
+    if (filePlaying == 0) {
+        loadSound1(0);
+        loadSound1(1);
+    } if (filePlaying == trialNum[0]) {
+        loadSound2(0);
+        loadSound2(1);
+    }
+    
 }
 
 //// Play/Pauseボタンを押すと再生，一時停止のときにはselectAnsに記録
@@ -40,6 +46,24 @@ function AudioButtonFunc1(n_audio) {
     debugShowLog(audioPlaying);
     // END if audioPlaying
 }   // END AudioButtonFunc
+function AudioButtonFunc2(n_audio) {
+    if (audioPlaying[n_audio] == false) {
+        for (var n = 0; n < ptnNum; ++n) {
+            audioArray2[n_audio][n].loop = true;
+            audioArray2[n_audio][n].play();
+        }
+        for (var n = 0; n < ptnNum; ++n) {
+            audioArray2[n_audio][n].volume = 0;
+        }
+        audioArray2[n_audio][playNum].volume = 1.0;
+        audioPlaying[n_audio] = true;
+    } else {
+        for (var n = 0; n < ptnNum; ++n) {
+            audioArray2[n_audio].pause();
+        }
+        audioPlaying[n_audio] = false;
+    }   // END if audioPlaying0
+}   // END AudioButtonFunc
 
 // カーソル位置変更 => 音ファイル切り替え
 function ChangeVolume() {
@@ -54,25 +78,21 @@ function ChangeVolume() {
     }
 }
 
-// 音声ファイルの読み込み
-//function loadSound() {
-//    readFile = audioFile[filePlaying];
-//    for (var i = 0; i < 8; ++i) {
-//        var audioname = readFile + point[filePlaying][ptnPlaying][i] + ".wav";
-//        array[i] = new Audio(audioname);
-//    }
-//    console.log(audioname);
-//    for (var i = 0; i < array.length; ++i) {
-//        array[i].load();
-//    }
-//    audioPlaying0 = false;
-//}
-
+// Load sound files
 function loadSound1(n_audio) {
     readFile = audioFile1[n_audio][filePlaying];
     var audioname = readFile + ".wav";
     audioArray1[n_audio] = new Audio(audioname);
     audioArray1[n_audio].load();
+}
+function loadSound2(n_audio) {
+    n_file = filePlaying - trialNum[0];
+    readFile = audioFile2[n_audio][n_file];
+    for (var n = 0; n < ptnNum; ++n) {
+        var audioname = readFile + point[n_audio][n_file][n] + ".wav";
+        audioArray2[n_audio][n] = new Audio(audioname);
+        audioArray2[n_audio][n].load();
+    }
 }
 
 // 矢印キーで再生ファイルを切り替え
@@ -145,28 +165,11 @@ function saveAns2Array1() {
     } else {
         var nameNtr = "selectNtr" + fileAns;
     }
-    debugShowLog(n_q);
-
     var idNtr = document.getElementById(nameNtr);
     if (n_q == 1) {
-        debugShowLog(nameNtr);
         selectAns[filePlaying][0] = idNtr.options[idNtr.selectedIndex].value;
+        debugShowLog(selectAns[filePlaying]);
     }
-    for (var n = 0; n < 1; ++n) {
-        if (selectAns[filePlaying][n] != null) {
-            AnsFill = AnsFill + 1;
-        }
-    }
-    if (AnsFill == 1) {
-        filePlaying = filePlaying + 1;
-        if (filePlaying < trialNum[0]) {
-            loadSound1(0);
-            loadSound1(1);
-        }
-    } else {
-        alert("回答が済んでいません!");
-    }
-    AnsFill = 0;
 }   // END saveAnsFunc
 
 // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
@@ -193,7 +196,7 @@ function saveAns2Array1() {
 
 // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
 function saveArrayVal1() {
-    for (var n = 0; n < 3; ++n) {
+    for (var n = 0; n < 1; ++n) {
         if (selectAns[filePlaying][n] != null) {
             AnsFill = AnsFill + 1;
         }
@@ -203,9 +206,11 @@ function saveArrayVal1() {
         if (filePlaying < trialNum[0]) {
             loadSound1(0);
             loadSound1(1);
+        } if (filePlaying == trialNum[0]) {
+            iniFunc();
         }
     } else {
-        alert("回答が済んでいません!");
+        alert("Select answer!");
     }
     AnsFill = 0;
 }   // END saveAnsFunc
