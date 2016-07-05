@@ -11,125 +11,419 @@
 
     <script src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="three.min.js"></script>
+    <script type="text/javascript" src="usefulFunction.js"></script>
     <script type="text/javascript" src="functionList.js"></script>
     <script type="text/javascript" src="fileLink.js"></script>
 
     <script type="text/javascript">
-        /* 結果を保持する配列 */
+        var DEBUG_MODE = true;   // Debug or NOT
+        /* Parameters */
+        var audioPlaying = new Array(false, false);   // Playing or not
+        var cmpNum = 2;   // Number of compared data
+        var filePlaying = 0;   // # of playing question
+        var playNum = new Array(0, 0);   // Which pattern is playing ()
+        var ptnPlaying = 0;  // パターン選択回答用
+        var quesNum = new Array(1, 3);   // Number of compared data
+        //var trialNum = new Array(10, 10);
+        var trialNum = new Array(1, 1);
+        var trialTotal = arraySum(trialNum);
+
+        /* Array to store answers */
         var selectAns = new Array();
-        for (var i = 0; i < 12; ++i) {
-            selectAns[i] = new Array();
+        for (var n = 0; n < trialTotal; ++n) {
+            selectAns[n] = new Array();
         }
 
-        /* 音声ファイルの読み込み */
-        var filePlaying = 0;
-        var playNum = 0;
-        var ptnPlaying = 0;  // パターン選択回答用
-        var ptnAsking = 1;   // 移動有無回答用
-        var AnsFill = 0;
-        var audioFile1 = new Array();
+        /* Load sound files */
         var point = new Array();
         point[0] = new Array();
-        point[0][1] = new Array("111", "110", "100", "101", "001", "011", "010", "000");   // Humming
-        point[0][0] = new Array("111", "101", "110", "011", "010", "001", "100", "000");   // 音源減っていく
         point[1] = new Array();
-        point[1][0] = new Array("111", "011", "001", "101", "100", "110", "010", "000");   // Humming
-        point[1][1] = new Array("111", "110", "101", "011", "001", "010", "100", "000");   // 音源減っていく
-        point[2] = new Array();
-        point[2][1] = new Array("111", "110", "010", "011", "001", "101", "100", "000");   // Humming
-        point[2][0] = new Array("111", "110", "011", "101", "001", "100", "010", "000");   // 音源減っていく
-        point[3] = new Array();
-        point[3][0] = new Array("111", "110", "010", "011", "001", "101", "100", "000");   // Humming
-        point[3][1] = new Array("111", "011", "101", "110", "100", "010", "001", "000");   // 音源減っていく
-        point[4] = new Array();
-        point[4][0] = new Array("111", "101", "100", "110", "010", "011", "001", "000");   // Humming
-        point[4][1] = new Array("111", "101", "011", "110", "010", "100", "001", "000");   // 音源減っていく
-        point[5] = new Array();
-        point[5][1] = new Array("111", "011", "010", "110", "100", "101", "001", "000");   // Humming
-        point[5][0] = new Array("111", "011", "110", "101", "100", "001", "010", "000");   // 音源減っていく
-        point[6] = new Array();
-        point[6][1] = new Array("111", "011", "010", "110", "100", "101", "001", "000");   // Humming
-        point[6][0] = new Array("111", "110", "011", "101", "001", "100", "010", "000");   // 音源減っていく
-        point[7] = new Array();
-        point[7][1] = new Array("111", "101", "100", "110", "010", "011", "001", "000");   // Humming
-        point[7][0] = new Array("111", "011", "110", "101", "100", "001", "010", "000");   // 音源減っていく
-        point[8] = new Array();
-        point[8][0] = new Array("111", "101", "001", "011", "010", "110", "100", "000");   // Humming
-        point[8][1] = new Array("111", "101", "011", "110", "010", "100", "001", "000");   // 音源減っていく
-        point[9] = new Array();
-        point[9][0] = new Array("111", "101", "001", "011", "010", "110", "100", "000");   // Humming
-        point[9][1] = new Array("111", "101", "110", "011", "010", "001", "100", "000");   // 音源減っていく
-        point[10] = new Array();
-        point[10][0] = new Array("111", "110", "100", "101", "001", "011", "010", "000");   // Humming
-        point[10][1] = new Array("111", "011", "101", "110", "100", "010", "001", "000");   // 音源減っていく
-        point[11] = new Array();
-        point[11][1] = new Array("111", "011", "001", "101", "100", "110", "010", "000");   // Humming
-        point[11][0] = new Array("111", "110", "101", "011", "001", "010", "100", "000");   // 音源減っていく
-                
+        point[0][0] = new Array("111", "100", "110", "101", "011", "001", "010");
+        point[1][0] = new Array("111", "011", "010", "110", "100", "101", "001");
+        point[0][1] = new Array("111", "110", "100", "101", "001", "011", "010");
+        point[1][1] = new Array("111", "110", "100", "101", "001", "011", "010");
+        point[0][2] = new Array("111", "001", "101", "100", "011", "110", "010");
+        point[1][2] = new Array("111", "011", "101", "110", "001", "100", "010");
+        point[0][3] = new Array("111", "110", "100", "101", "001", "011", "010");
+        point[1][3] = new Array("111", "101", "110", "011", "010", "100", "001");
+        point[0][4] = new Array("111", "011", "110", "101", "001", "100", "010");
+        point[1][4] = new Array("111", "110", "010", "101", "011", "100", "001");
+        point[0][5] = new Array("111", "011", "001", "110", "100", "010", "101");
+        point[1][5] = new Array("111", "101", "011", "110", "010", "001", "100");
+        point[0][6] = new Array("111", "001", "011", "101", "110", "010", "100");
+        point[1][6] = new Array("111", "110", "100", "101", "001", "011", "010");
+        point[0][7] = new Array("111", "011", "001", "101", "100", "110", "010");
+        point[1][7] = new Array("111", "110", "101", "011", "001", "100", "010");
+        point[0][8] = new Array("111", "101", "010", "001", "100", "011", "110");
+        point[1][8] = new Array("111", "101", "010", "001", "100", "011", "110");
+        point[0][9] = new Array("111", "101", "001", "011", "010", "110", "100");
+        point[1][9] = new Array("111", "110", "101", "011", "010", "100", "001");
+        point[0][10] = new Array("111", "101", "011", "110", "100", "010", "001");
+        point[1][10] = new Array("111", "101", "011", "110", "100", "010", "001");
+        point[0][11] = new Array("111", "100", "110", "011", "010", "101", "001");
+        point[1][11] = new Array("111", "100", "110", "011", "010", "101", "001");
+        point[0][12] = new Array("111", "011", "010", "110", "100", "101", "001");
+        point[1][12] = new Array("111", "110", "101", "011", "010", "100", "001");
+        point[0][13] = new Array("111", "110", "011", "101", "001", "100", "010");
+        point[1][13] = new Array("111", "011", "010", "110", "100", "101", "001");
+        point[0][14] = new Array("111", "110", "010", "100", "001", "101", "011");
+        point[1][14] = new Array("111", "110", "100", "101", "001", "011", "010");
+        point[0][15] = new Array("111", "011", "101", "110", "001", "010", "100");
+        point[1][15] = new Array("111", "010", "110", "101", "011", "001", "100");
+        point[0][16] = new Array("111", "011", "101", "110", "100", "010", "001");
+        point[1][16] = new Array("111", "011", "010", "110", "101", "001", "100");
+        point[0][17] = new Array("111", "101", "001", "011", "010", "110", "100");
+        point[1][17] = new Array("111", "100", "011", "101", "110", "010", "001");
+        point[0][18] = new Array("111", "110", "101", "011", "010", "100", "001");
+        point[1][18] = new Array("111", "110", "101", "011", "010", "100", "001");
+        point[0][19] = new Array("111", "010", "110", "011", "001", "101", "100");
+        point[1][19] = new Array("111", "101", "100", "110", "010", "011", "001");
+        point[0][20] = new Array("111", "101", "001", "011", "010", "110", "100");
+        point[1][20] = new Array("111", "101", "011", "110", "010", "100", "001");
+        point[0][21] = new Array("111", "110", "100", "010", "001", "011", "101");
+        point[1][21] = new Array("111", "110", "100", "010", "001", "011", "101");
+        point[0][22] = new Array("111", "001", "011", "101", "110", "100", "010");
+        point[1][22] = new Array("111", "101", "110", "011", "010", "001", "100");
+        point[0][23] = new Array("111", "010", "101", "001", "110", "100", "011");
+        point[1][23] = new Array("111", "110", "101", "011", "010", "100", "001");
+        point[0][24] = new Array("111", "101", "011", "110", "001", "010", "100");
+        point[1][24] = new Array("111", "110", "100", "101", "001", "011", "010");
+        point[0][25] = new Array("111", "001", "101", "110", "100", "010", "011");
+        point[1][25] = new Array("111", "011", "101", "110", "010", "001", "100");
+        point[0][26] = new Array("111", "011", "001", "101", "100", "110", "010");
+        point[1][26] = new Array("111", "011", "001", "101", "100", "110", "010");
+        point[0][27] = new Array("111", "110", "010", "011", "001", "101", "100");
+        point[1][27] = new Array("111", "110", "011", "101", "100", "010", "001");
+        point[0][28] = new Array("111", "101", "011", "100", "110", "010", "001");
+        point[1][28] = new Array("111", "101", "011", "100", "110", "010", "001");
+        point[0][29] = new Array("111", "101", "011", "100", "110", "010", "001");
+        point[1][29] = new Array("111", "101", "011", "110", "001", "010", "100");
+        point[0][30] = new Array("111", "110", "010", "011", "001", "101", "100");
+        point[1][30] = new Array("111", "001", "010", "011", "101", "110", "100");
+        point[0][31] = new Array("111", "011", "010", "110", "100", "101", "001");
+        point[1][31] = new Array("111", "101", "110", "011", "001", "100", "010");
+        point[0][32] = new Array("111", "110", "101", "011", "001", "010", "100");
+        point[1][32] = new Array("111", "101", "100", "110", "010", "011", "001");
+        point[0][33] = new Array("111", "100", "010", "101", "011", "110", "001");
+        point[1][33] = new Array("111", "100", "010", "101", "011", "110", "001");
+        point[0][34] = new Array("111", "101", "011", "110", "100", "001", "010");
+        point[1][34] = new Array("111", "101", "110", "100", "001", "011", "010");
+        point[0][35] = new Array("111", "100", "101", "110", "011", "010", "001");
+        point[1][35] = new Array("111", "101", "100", "110", "010", "011", "001");
+        point[0][36] = new Array("111", "101", "110", "011", "001", "100", "010");
+        point[1][36] = new Array("111", "001", "110", "101", "011", "010", "100");
+        point[0][37] = new Array("111", "011", "010", "110", "100", "101", "001");
+        point[1][37] = new Array("111", "011", "010", "110", "100", "101", "001");
+        point[0][38] = new Array("111", "001", "110", "100", "010", "101", "011");
+        point[1][38] = new Array("111", "001", "110", "100", "010", "101", "011");
+        point[0][39] = new Array("111", "011", "010", "110", "100", "101", "001");
+        point[1][39] = new Array("111", "010", "001", "101", "100", "011", "110");
+        point[0][40] = new Array("111", "101", "110", "011", "100", "010", "001");
+        point[1][40] = new Array("111", "110", "010", "011", "101", "001", "100");
+        point[0][41] = new Array("111", "101", "100", "110", "010", "011", "001");
+        point[1][41] = new Array("111", "101", "110", "011", "010", "100", "001");
+        point[0][42] = new Array("111", "101", "110", "011", "100", "010", "001");
+        point[1][42] = new Array("111", "110", "010", "011", "001", "101", "100");
+        point[0][43] = new Array("111", "101", "100", "110", "010", "011", "001");
+        point[1][43] = new Array("111", "101", "100", "110", "010", "011", "001");
+        point[0][44] = new Array("111", "101", "011", "110", "001", "010", "100");
+        point[1][44] = new Array("111", "101", "011", "110", "001", "010", "100");
+        point[0][45] = new Array("111", "101", "110", "100", "001", "010", "011");
+        point[1][45] = new Array("111", "101", "001", "011", "010", "110", "100");
+        point[0][46] = new Array("111", "110", "011", "101", "100", "001", "010");
+        point[1][46] = new Array("111", "110", "011", "101", "100", "001", "010");
+        point[0][47] = new Array("111", "101", "110", "011", "100", "010", "001");
+        point[1][47] = new Array("111", "101", "001", "011", "010", "110", "100");
+        point[0][48] = new Array("111", "101", "110", "011", "001", "010", "100");
+        point[1][48] = new Array("111", "101", "110", "011", "001", "010", "100");
+        point[0][49] = new Array("111", "101", "001", "011", "010", "110", "100");
+        point[1][49] = new Array("111", "101", "001", "011", "010", "110", "100");
+        point[0][50] = new Array("111", "011", "001", "101", "100", "110", "010");
+        point[1][50] = new Array("111", "001", "101", "110", "100", "011", "010");
+        point[0][51] = new Array("111", "110", "011", "101", "010", "100", "001");
+        point[1][51] = new Array("111", "110", "100", "101", "001", "011", "010");
+        point[0][52] = new Array("111", "101", "011", "110", "100", "001", "010");
+        point[1][52] = new Array("111", "101", "011", "110", "100", "001", "010");
+        point[0][53] = new Array("111", "110", "011", "101", "100", "001", "010");
+        point[1][53] = new Array("111", "011", "001", "101", "100", "110", "010");
+        point[0][54] = new Array("111", "110", "010", "011", "001", "101", "100");
+        point[1][54] = new Array("111", "110", "010", "011", "001", "101", "100");
+        point[0][55] = new Array("111", "011", "001", "101", "100", "110", "010");
+        point[1][55] = new Array("111", "110", "101", "100", "010", "001", "011");
+        point[0][56] = new Array("111", "101", "011", "110", "100", "001", "010");
+        point[1][56] = new Array("111", "110", "010", "011", "001", "101", "100");
+        point[0][57] = new Array("111", "110", "010", "011", "001", "101", "100");
+        point[1][57] = new Array("111", "010", "001", "011", "110", "101", "100");
+        point[0][58] = new Array("111", "101", "100", "110", "010", "011", "001");
+        point[1][58] = new Array("111", "110", "101", "011", "100", "010", "001");
+        point[0][59] = new Array("111", "110", "101", "011", "100", "010", "001");
+        point[1][59] = new Array("111", "011", "001", "101", "100", "110", "010");
+
+        var ptnNum = point[0][0].length;
+
+        /* Names of sound files */
+        //for comparison of naturality
         var audioFile1 = new Array();
-        audioFile1[0]  = "sound/outside/1c/1c_sw";
-        audioFile1[1]  = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile1[2]  = "sound/outside/2b/2b_sw";
-        audioFile1[3]  = "sound/outside/1b/1b_sw";
-        audioFile1[4]  = audioFile1[1]
-        audioFile1[5] = "sound/outside/2c/2c_sw";
-        audioFile1[6]  = audioFile1[1];
-        audioFile1[7]  = audioFile1[1];
-        audioFile1[8]  = audioFile1[5];
-        audioFile1[9]  = audioFile1[0];
-        audioFile1[10] = audioFile1[2];
-        audioFile1[11] = audioFile1[3];
-        var array = new Array();
+        audioFile1[0] = new Array();
+        audioFile1[1] = new Array();
+        audioFile1[0][0] = "sound/ALPstream/outside/2c/2c_111_101_011_110_010_001_100";
+        audioFile1[1][0] = "sound/ALPstream/outside/2c/2c_111_110_010_011_001_101_100";
+        audioFile1[0][1] = "sound/ALPstream/outside/2c/2c_111_110_101_011_100_010_001";
+        audioFile1[1][1] = "sound/ALPstream/outside/2c/2c_111_011_001_110_100_010_101";
+        audioFile1[0][2] = "sound/ALPstream/outside/1c/1c_111_011_101_110_100_001_010";
+        audioFile1[1][2] = "sound/ALPstream/outside/1c/1c_111_010_101_011_001_110_100";
+        audioFile1[0][3] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
+        audioFile1[1][3] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_101_010_110_100_011";
+        audioFile1[0][4] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_011_010_101_001";
+        audioFile1[1][4] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_011_010_101_001";
+        audioFile1[0][5] = "sound/ALPstream/outside/1c/1c_111_110_010_011_001_101_100";
+        audioFile1[1][5] = "sound/ALPstream/outside/1c/1c_111_110_011_101_010_001_100";
+        audioFile1[0][6] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_100_110_101_010_011";
+        audioFile1[1][6] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
+        audioFile1[0][7] = "sound/ALPstream/outside/1c/1c_111_001_110_011_100_010_101";
+        audioFile1[1][7] = "sound/ALPstream/outside/1c/1c_111_001_110_011_100_010_101";
+        audioFile1[0][8] = "sound/ALPstream/outside/1c/1c_111_101_011_110_100_010_001";
+        audioFile1[1][8] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
+        audioFile1[0][9] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
+        audioFile1[1][9] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
+        audioFile1[0][10] = "sound/ALPstream/outside/2c/2c_111_110_011_101_010_100_001";
+        audioFile1[1][10] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
+        audioFile1[0][11] = "sound/ALPstream/outside/2c/2c_111_001_011_110_100_101_010";
+        audioFile1[1][11] = "sound/ALPstream/outside/2c/2c_111_110_011_101_010_100_001";
+        audioFile1[0][12] = "sound/ALPstream/outside/1c/1c_111_101_110_100_010_011_001";
+        audioFile1[1][12] = "sound/ALPstream/outside/1c/1c_111_011_010_110_100_101_001";
+        audioFile1[0][13] = "sound/ALPstream/outside/2c/2c_111_101_001_011_010_110_100";
+        audioFile1[1][13] = "sound/ALPstream/outside/2c/2c_111_011_101_110_010_100_001";
+        audioFile1[0][14] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
+        audioFile1[1][14] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
+        audioFile1[0][15] = "sound/ALPstream/outside/2c/2c_111_110_101_011_010_001_100";
+        audioFile1[1][15] = "sound/ALPstream/outside/2c/2c_111_100_011_110_010_101_001";
+        audioFile1[0][16] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_110_011_001_101_010";
+        audioFile1[1][16] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_001_100";
+        audioFile1[0][17] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_011_110_010_001";
+        audioFile1[1][17] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_100_010_001";
+        audioFile1[0][18] = "sound/ALPstream/outside/2c/2c_111_100_110_011_101_001_010";
+        audioFile1[1][18] = "sound/ALPstream/outside/2c/2c_111_110_010_011_001_101_100";
+        audioFile1[0][19] = "sound/ALPstream/outside/2c/2c_111_011_001_101_100_110_010";
+        audioFile1[1][19] = "sound/ALPstream/outside/2c/2c_111_101_100_010_110_011_001";
+        audioFile1[0][20] = "sound/ALPstream/outside/1c/1c_111_011_100_001_101_110_010";
+        audioFile1[1][20] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
+        audioFile1[0][21] = "sound/ALPstream/outside/2c/2c_111_101_011_110_100_001_010";
+        audioFile1[1][21] = "sound/ALPstream/outside/2c/2c_111_101_011_110_100_001_010";
+        audioFile1[0][22] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
+        audioFile1[1][22] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
+        audioFile1[0][23] = "sound/ALPstream/outside/1c/1c_111_011_110_101_100_001_010";
+        audioFile1[1][23] = "sound/ALPstream/outside/1c/1c_111_011_110_101_100_001_010";
+        audioFile1[0][24] = "sound/ALPstream/outside/1c/1c_111_110_001_011_010_100_101";
+        audioFile1[1][24] = "sound/ALPstream/outside/1c/1c_111_110_100_101_001_011_010";
+        audioFile1[0][25] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
+        audioFile1[1][25] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
+        audioFile1[0][26] = "sound/ALPstream/outside/1c/1c_111_110_011_101_100_010_001";
+        audioFile1[1][26] = "sound/ALPstream/outside/1c/1c_111_110_011_101_100_010_001";
+        audioFile1[0][27] = "sound/ALPstream/outside/2c/2c_111_100_110_101_011_010_001";
+        audioFile1[1][27] = "sound/ALPstream/outside/2c/2c_111_100_110_101_011_010_001";
+        audioFile1[0][28] = "sound/ALPstream/outside/2c/2c_111_101_100_110_010_011_001";
+        audioFile1[1][28] = "sound/ALPstream/outside/2c/2c_111_001_101_011_100_010_110";
+        audioFile1[0][29] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
+        audioFile1[1][29] = "sound/ALPstream/outside/2c/2c_111_101_100_010_011_110_001";
+        audioFile1[0][30] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_001_101_010_110_011";
+        audioFile1[1][30] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_001_101_010_110_011";
+        audioFile1[0][31] = "sound/ALPstream/outside/1c/1c_111_001_101_010_011_100_110";
+        audioFile1[1][31] = "sound/ALPstream/outside/1c/1c_111_001_101_010_011_100_110";
+        audioFile1[0][32] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
+        audioFile1[1][32] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_100_101_011_110_010";
+        audioFile1[0][33] = "sound/ALPstream/outside/2c/2c_111_011_110_101_100_001_010";
+        audioFile1[1][33] = "sound/ALPstream/outside/2c/2c_111_011_110_100_101_001_010";
+        audioFile1[0][34] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_011_101_010_100_001";
+        audioFile1[1][34] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
+        audioFile1[0][35] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
+        audioFile1[1][35] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
+        audioFile1[0][36] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_001_101_100_110_010";
+        audioFile1[1][36] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_101_011_001_010_100";
+        audioFile1[0][37] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_100_001_010";
+        audioFile1[1][37] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
+        audioFile1[0][38] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
+        audioFile1[1][38] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
+        audioFile1[0][39] = "sound/ALPstream/outside/2c/2c_111_101_100_110_010_011_001";
+        audioFile1[1][39] = "sound/ALPstream/outside/2c/2c_111_110_101_011_001_010_100";
+        audioFile1[0][40] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_010_100_001";
+        audioFile1[1][40] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_010_110_100_101_001";
+        audioFile1[0][41] = "sound/ALPstream/outside/2c/2c_111_011_101_110_001_100_010";
+        audioFile1[1][41] = "sound/ALPstream/outside/2c/2c_111_011_101_110_001_100_010";
+        audioFile1[0][42] = "sound/ALPstream/outside/1c/1c_111_011_110_101_001_010_100";
+        audioFile1[1][42] = "sound/ALPstream/outside/1c/1c_111_101_100_110_010_011_001";
+        audioFile1[0][43] = "sound/ALPstream/outside/1c/1c_111_110_010_100_001_101_011";
+        audioFile1[1][43] = "sound/ALPstream/outside/1c/1c_111_110_101_011_100_001_010";
+        audioFile1[0][44] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
+        audioFile1[1][44] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_011_101_001_100_010";
+        audioFile1[0][45] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_101_001_011_010";
+        audioFile1[1][45] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_010_110_001_011_101_100";
+        audioFile1[0][46] = "sound/ALPstream/outside/1c/1c_111_011_010_110_100_101_001";
+        audioFile1[1][46] = "sound/ALPstream/outside/1c/1c_111_011_101_110_010_001_100";
+        audioFile1[0][47] = "sound/ALPstream/outside/2c/2c_111_110_101_011_010_001_100";
+        audioFile1[1][47] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
+        audioFile1[0][48] = "sound/ALPstream/outside/2c/2c_111_011_100_010_001_101_110";
+        audioFile1[1][48] = "sound/ALPstream/outside/2c/2c_111_011_100_010_001_101_110";
+        audioFile1[0][49] = "sound/ALPstream/outside/1c/1c_111_010_011_110_001_101_100";
+        audioFile1[1][49] = "sound/ALPstream/outside/1c/1c_111_101_100_110_010_011_001";
+        audioFile1[0][50] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_100_001_010";
+        audioFile1[1][50] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_101_001_011_010";
+        audioFile1[0][51] = "sound/ALPstream/outside/1c/1c_111_011_101_110_001_010_100";
+        audioFile1[1][51] = "sound/ALPstream/outside/1c/1c_111_101_010_011_100_110_001";
+        audioFile1[0][52] = "sound/ALPstream/outside/1c/1c_111_101_011_110_100_010_001";
+        audioFile1[1][52] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
+        audioFile1[0][53] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_110_100_010_101_011";
+        audioFile1[1][53] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_010_100_001";
+        audioFile1[0][54] = "sound/ALPstream/outside/1c/1c_111_110_100_101_001_011_010";
+        audioFile1[1][54] = "sound/ALPstream/outside/1c/1c_111_011_110_101_001_010_100";
+        audioFile1[0][55] = "sound/ALPstream/outside/2c/2c_111_011_001_101_100_110_010";
+        audioFile1[1][55] = "sound/ALPstream/outside/2c/2c_111_011_110_101_010_001_100";
+        audioFile1[0][56] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_110_101_010_100_001";
+        audioFile1[1][56] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_110_101_010_100_001";
+        audioFile1[0][57] = "sound/ALPstream/outside/1c/1c_111_101_011_110_001_100_010";
+        audioFile1[1][57] = "sound/ALPstream/outside/1c/1c_111_101_110_100_001_011_010";
+        audioFile1[0][58] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_110_010_011_001_101";
+        audioFile1[1][58] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_011_110_100_001_010";
+        audioFile1[0][59] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_100_001";
+        audioFile1[1][59] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_100_001";
+        //for comparison of efficiency
+        var audioFile2 = new Array();
+        audioFile2[0] = new Array();
+        audioFile2[1] = new Array();
+        audioFile2[0][0] = "sound/outside/2c/2c_sw";
+        audioFile2[1][0] = audioFile2[0][0];
+        audioFile2[0][1] = "sound/outside/2c/2c_sw";
+        audioFile2[1][1] = audioFile2[0][1];
+        audioFile2[0][2] = "sound/outside/2c/2c_sw";
+        audioFile2[1][2] = audioFile2[0][2];
+        audioFile2[0][3] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][3] = audioFile2[0][3];
+        audioFile2[0][4] = "sound/outside/2c/2c_sw";
+        audioFile2[1][4] = audioFile2[0][4];
+        audioFile2[0][5] = "sound/outside/2c/2c_sw";
+        audioFile2[1][5] = audioFile2[0][5];
+        audioFile2[0][6] = "sound/outside/1c/1c_sw";
+        audioFile2[1][6] = audioFile2[0][6];
+        audioFile2[0][7] = "sound/outside/1c/1c_sw";
+        audioFile2[1][7] = audioFile2[0][7];
+        audioFile2[0][8] = "sound/outside/2c/2c_sw";
+        audioFile2[1][8] = audioFile2[0][8];
+        audioFile2[0][9] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][9] = audioFile2[0][9];
+        audioFile2[0][10] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][10] = audioFile2[0][10];
+        audioFile2[0][11] = "sound/outside/1c/1c_sw";
+        audioFile2[1][11] = audioFile2[0][11];
+        audioFile2[0][12] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][12] = audioFile2[0][12];
+        audioFile2[0][13] = "sound/outside/2c/2c_sw";
+        audioFile2[1][13] = audioFile2[0][13];
+        audioFile2[0][14] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][14] = audioFile2[0][14];
+        audioFile2[0][15] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][15] = audioFile2[0][15];
+        audioFile2[0][16] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][16] = audioFile2[0][16];
+        audioFile2[0][17] = "sound/outside/2c/2c_sw";
+        audioFile2[1][17] = audioFile2[0][17];
+        audioFile2[0][18] = "sound/outside/2c/2c_sw";
+        audioFile2[1][18] = audioFile2[0][18];
+        audioFile2[0][19] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][19] = audioFile2[0][19];
+        audioFile2[0][20] = "sound/outside/2c/2c_sw";
+        audioFile2[1][20] = audioFile2[0][20];
+        audioFile2[0][21] = "sound/outside/1c/1c_sw";
+        audioFile2[1][21] = audioFile2[0][21];
+        audioFile2[0][22] = "sound/outside/1c/1c_sw";
+        audioFile2[1][22] = audioFile2[0][22];
+        audioFile2[0][23] = "sound/outside/1c/1c_sw";
+        audioFile2[1][23] = audioFile2[0][23];
+        audioFile2[0][24] = "sound/outside/2c/2c_sw";
+        audioFile2[1][24] = audioFile2[0][24];
+        audioFile2[0][25] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][25] = audioFile2[0][25];
+        audioFile2[0][26] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][26] = audioFile2[0][26];
+        audioFile2[0][27] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][27] = audioFile2[0][27];
+        audioFile2[0][28] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][28] = audioFile2[0][28];
+        audioFile2[0][29] = "sound/outside/2c/2c_sw";
+        audioFile2[1][29] = audioFile2[0][29];
+        audioFile2[0][30] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][30] = audioFile2[0][30];
+        audioFile2[0][31] = "sound/outside/1c/1c_sw";
+        audioFile2[1][31] = audioFile2[0][31];
+        audioFile2[0][32] = "sound/outside/2c/2c_sw";
+        audioFile2[1][32] = audioFile2[0][32];
+        audioFile2[0][33] = "sound/outside/2c/2c_sw";
+        audioFile2[1][33] = audioFile2[0][33];
+        audioFile2[0][34] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][34] = audioFile2[0][34];
+        audioFile2[0][35] = "sound/outside/2c/2c_sw";
+        audioFile2[1][35] = audioFile2[0][35];
+        audioFile2[0][36] = "sound/outside/1c/1c_sw";
+        audioFile2[1][36] = audioFile2[0][36];
+        audioFile2[0][37] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][37] = audioFile2[0][37];
+        audioFile2[0][38] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][38] = audioFile2[0][38];
+        audioFile2[0][39] = "sound/outside/1c/1c_sw";
+        audioFile2[1][39] = audioFile2[0][39];
+        audioFile2[0][40] = "sound/outside/1c/1c_sw";
+        audioFile2[1][40] = audioFile2[0][40];
+        audioFile2[0][41] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][41] = audioFile2[0][41];
+        audioFile2[0][42] = "sound/outside/1c/1c_sw";
+        audioFile2[1][42] = audioFile2[0][42];
+        audioFile2[0][43] = "sound/outside/1c/1c_sw";
+        audioFile2[1][43] = audioFile2[0][43];
+        audioFile2[0][44] = "sound/outside/1c/1c_sw";
+        audioFile2[1][44] = audioFile2[0][44];
+        audioFile2[0][45] = "sound/outside/1c/1c_sw";
+        audioFile2[1][45] = audioFile2[0][45];
+        audioFile2[0][46] = "sound/outside/2c/2c_sw";
+        audioFile2[1][46] = audioFile2[0][46];
+        audioFile2[0][47] = "sound/outside/1c/1c_sw";
+        audioFile2[1][47] = audioFile2[0][47];
+        audioFile2[0][48] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][48] = audioFile2[0][48];
+        audioFile2[0][49] = "sound/outside/1c/1c_sw";
+        audioFile2[1][49] = audioFile2[0][49];
+        audioFile2[0][50] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][50] = audioFile2[0][50];
+        audioFile2[0][51] = "sound/outside/1c/1c_sw";
+        audioFile2[1][51] = audioFile2[0][51];
+        audioFile2[0][52] = "sound/outside/1c/1c_sw";
+        audioFile2[1][52] = audioFile2[0][52];
+        audioFile2[0][53] = "sound/outside/2c/2c_sw";
+        audioFile2[1][53] = audioFile2[0][53];
+        audioFile2[0][54] = "sound/outside/2c/2c_sw";
+        audioFile2[1][54] = audioFile2[0][54];
+        audioFile2[0][55] = "sound/outside/1c/1c_sw";
+        audioFile2[1][55] = audioFile2[0][55];
+        audioFile2[0][56] = "sound/outside/2c/2c_sw";
+        audioFile2[1][56] = audioFile2[0][56];
+        audioFile2[0][57] = "sound/outside/2c/2c_sw";
+        audioFile2[1][57] = audioFile2[0][57];
+        audioFile2[0][58] = "sound/outside/1c/1c_sw";
+        audioFile2[1][58] = audioFile2[0][58];
+        audioFile2[0][59] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+        audioFile2[1][59] = audioFile2[0][59];
 
-        // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
-        function saveArrayFunc() {
-            console.log(filePlaying);
-            console.log(ptnPlaying);
-            console.log(selectAns[filePlaying]);
-            console.log(selectAns);
-            for (var i = 0; i < 3; ++i) {
-                if (selectAns[filePlaying][i] != null) {
-                    AnsFill = AnsFill + 1;
-                }
+        /* Arrays to play sound files */
+        //for comparison of naturality
+        var audioArray1 = new Array();
+        for (var n = 0; n < cmpNum; ++n) {
+            audioArray1[n] = new Array();
+        }
+        //for comparison of easiness to find
+        var audioArray2 = new Array();
+        for (var n = 0; n < cmpNum; ++n) {
+            audioArray2[n] = new Array();
+            for (var m = 0; m < ptnNum; ++m) {
+                audioArray2[n][m] = new Array();
             }
-            if (AnsFill == 3){
-                filePlaying = filePlaying + 1;
-                if (filePlaying < 12){
-                loadSound();
-                }
-            } else{
-                alert("回答が済んでいません!");
-            }
-            AnsFill = 0;
-        }   // END saveAnsFunc
-
-        // 回答をファイルにして保存
-        function saveFunc() {
-            var data = selectAns;
-            if (data.length) {
-                var obj = document.getElementById("anchor");
-                obj.href = "data:application/octet-stream," +
-                           encodeURIComponent(data);
-                obj.innerHTML = "右クリックでリンク先を保存して下さい";
-            }
-        }   // END saveFunc
-
-        // ------------------------------------------------------------
-        // リッスンを開始する
-        // ------------------------------------------------------------
-        // イベントリスナーに対応している
-        if (document.addEventListener) {
-            // マウスカーソルを移動すると実行されるイベント
-            //document.addEventListener("mousemove", ChangeVolume);
-            // キーボードを押したときに実行されるイベント
-            document.addEventListener("keypress", KeyDownFunc);
-
-            // アタッチイベントに対応している
-        } else if (document.attachEvent) {
-            // マウスカーソルを移動すると実行されるイベント
-            //document.attachEvent("onmousemove", ChangeVolume);
-            // キーボードを押したときに実行されるイベント
-            document.attachEvent("onkeydown", KeyDownFunc);
         }
     </script>
 </head>
@@ -154,6 +448,41 @@
     必ずData1の#1, #2, Data2の#1, #2という順番で回答してください．戻って回答をすると，結果が正しく記録されないことがあります．<br />
     #1と#2で全く同じ聞こえ方の音を選ぶ必要はありません．それぞれバーを動かして聞き比べた音の中から判断してください．<br />
 </p>
+    <!-- << TEST 1 >>========================================================================================= -->
+    <!-- <<Data 1>>------------------------------------------------------------------------------------------- -->
+    <hr align="left" width="1100" color="#ffc8c8">
+    <h3 style="padding-left:10pt">Data 1. 女性の声が最も聞き取りやすいものをそれぞれ選んでください</h3>
+    <!--Play sounds-->
+    <table border="1" width="700" height="70">
+        <tr>
+            <!--#1-->
+            <td>
+                <script language="JavaScript">document.write("#1".bold())</script>
+                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+            </td>
+            <!--#2-->
+            <td>
+                <script language="JavaScript">document.write("#2".bold())</script>
+                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+            </td>
+        </tr>
+    </table>
+    <!--Naturality evalation-->
+    <form name="selectbox">
+        <p class="lowHigh">Q. 聞こえる音が違和感なく変化していたのはどちらですか？</p>
+        <select id="selectNtr01" onchange="saveAns2Array1()">
+            <option value="">*選んでください</option>
+            <option value="1">#1</option>
+            <option value="2">#2</option>
+            <option value="0">どちらも同じ</option>
+        </select>
+    </form>
+    <!--Save answer in array saving txt-->
+    <button onclick="saveArrayVal1(0);">Answer1 Save</button>
+    <a id="saveArray" href=""></a>
+    <p class="ls_normal"></p>
+
+    <!-- << TEST 2 >>========================================================================================= -->
     <!-- <<Data 1>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 1. 女性の声が最も聞き取りやすいものをそれぞれ選んでください</h3>
@@ -163,426 +492,31 @@
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider01_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
+                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <input id="slider61_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
+                <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider01_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
+                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <input id="slider61_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
+                <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
         </tr>
     </table>
     <!--評価回答-->
     <form name="selectbox">
         <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf01" onchange="saveAnsFunc(1)">
+        <select id="selectEf61" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
             <option value="2">#2</option>
+            <option value="0">どちらも同じ</option>
         </select>
     </form>
     <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer1 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-
-    <!-- <<Data 2>>--------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1200" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 2. 女性の声が最も聞き取りやすいものをそれぞれ選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider02_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider02_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf02" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer2 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-
-    <!-- <<Data 3>>--------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1200" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 3. 目覚まし時計の音と女性の声がどちらも聞き取りやすいものをそれぞれ選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider03_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider03_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf03" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer3 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-
-    <!-- <<Data 4>>--------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1200" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 4. 目覚まし時計の音が最も聞き取りやすいものをそれぞれ選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider04_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider04_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf04" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer4 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-
-    <!-- <<Data 5>>--------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1200" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 5. 男性の声と女性の声がどちらも聞き取りやすいものをそれぞれ選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider05_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider05_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf05" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer5 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-
-    <!-- <<Data 6>>--------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1200" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 6. 女性の声以外を聞き取りやすいものをそれぞれ選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider06_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider06_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf06" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer6 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-
-    <!-- <<Data 7>>--------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1200" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 7. 男性の声が最も聞き取りやすいものを選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider07_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider07_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf07" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer7 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-
-    <!-- <<Data 8>>--------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1200" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 8. 男性の声と女性の声がどちらも聞き取りやすいものを選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider08_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider08_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf08" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer8 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-    
-    <!-- <<Data 9>>------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 9. 女性の声が最も聞き取りやすいものをそれぞれ選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider09_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider09_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf09" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer9 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-    
-    <!-- <<Data 10>>------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 10. 目覚まし時計の音と女性の声がどちらも聞き取りやすいものを選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider10_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider10_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf10" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer10 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-    
-    <!-- <<Data 11>>------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 11. 目覚まし時計の音が最も聞き取りやすいものを選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider11_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider11_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf11" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer11 Save</button>
-    <a id="saveArray" href=""></a>
-    <p class="ls_normal"></p>
-    
-    <!-- <<Data 12>>------------------------------------------------------------------------------------------- -->
-    <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 12. 女性の声以外を聞き取りやすいものをそれぞれ選んでください</h3>
-    <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
-        <tr>
-            <!--#1-->
-            <td>
-                <script language="JavaScript">document.write("#1".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider12_1" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-            <!--#2-->
-            <td>
-                <script language="JavaScript">document.write("#2".bold())</script>
-                <button onclick="AudioButtonFunc()">Play/Stop</button>
-                <input id="slider12_2" type="range" min="0" max="7" step="1" value="0" onchange="showValue()" />
-                <button onclick="OkButtonFunc()">OK!</button>
-            </td>
-        </tr>
-    </table>
-    <!--評価回答-->
-    <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
-        <select id="selectEf12" onchange="saveAnsFunc(1)">
-            <option value="">*選んでください</option>
-            <option value="1">#1</option>
-            <option value="2">#2</option>
-        </select>
-    </form>
-    <!--結果を書き込み-->
-    <button onclick="saveArrayFunc();">Answer12 Save</button>
+    <button onclick="saveArrayVal2(1);">Answer Save</button>
     <a id="saveArray" href=""></a>
     <p class="ls_normal"></p>
     
