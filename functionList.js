@@ -97,6 +97,8 @@ function loadSound2(n_audio) {
 function saveAns2Array1() {
     var fileAns = filePlaying + 1;
     if (fileAns < 10) {
+        var nameOpt = "selectNtr00" + fileAns;
+    } else if (fileAns < 100) {
         var nameOpt = "selectNtr0" + fileAns;
     } else {
         var nameOpt = "selectNtr" + fileAns;
@@ -109,6 +111,8 @@ function saveAns2Array1() {
 function saveAns2Array2() {
     var fileAns = filePlaying + 1;
     if (fileAns < 10) {
+        var nameOpt = "selectEf00" + fileAns;
+    } else if (fileAns < 100) {
         var nameOpt = "selectEf0" + fileAns;
     } else {
         var nameOpt = "selectEf" + fileAns;
@@ -121,28 +125,6 @@ function saveAns2Array2() {
     }
     debugShowLog(selectAns[filePlaying]);
 }   // END saveAnsFunc
-
-// 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
-//function saveArrayFunc() {
-//    console.log(filePlaying);
-//    console.log(ptnPlaying);
-//    console.log(selectAns[filePlaying]);
-//    console.log(selectAns);
-//    for (var i = 0; i < 3; ++i) {
-//        if (selectAns[filePlaying][i] != null) {
-//            AnsFill = AnsFill + 1;
-//        }
-//    }
-//    if (AnsFill == 3) {
-//        filePlaying = filePlaying + 1;
-//        if (filePlaying < 12) {
-//            loadSound();
-//        }
-//    } else {
-//        alert("回答が済んでいません!");
-//    }
-//    AnsFill = 0;
-//}   // END saveAnsFunc
 
 // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
 function saveArrayVal1(n_type) {
@@ -198,6 +180,8 @@ function saveFunc() {
 function showValue(n_audio) {
     var fileAns = filePlaying + 1;
     if (fileAns < 10) {
+        var nameSld = "slider00" + fileAns;
+    } else if (fileAns < 100) {
         var nameSld = "slider0" + fileAns;
     } else {
         var nameSld = "slider" + fileAns;
