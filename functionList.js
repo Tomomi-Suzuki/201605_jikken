@@ -71,28 +71,6 @@ function loadSound2(n_audio) {
     }
 }
 
-// OKボタンを押すと選んだ選択肢が保存され，ptnPlayingが切り替わる
-//function OkButtonFunc() {
-//    for (var i = 0; i < array.length; ++i) {
-//        array[i].pause();
-//    }
-//    selectAns[filePlaying][ptnPlaying] = point[filePlaying][ptnPlaying][playNum];
-//    if (ptnPlaying == 0) {
-//        ptnPlaying = 1;
-//        if (selectAns[filePlaying][ptnPlaying] == null) {
-//            playNum = 0;
-//            loadSound();
-//        }
-//    } else if (ptnPlaying == 1) {
-//        ptnPlaying = 0;
-//        if (selectAns[filePlaying][ptnPlaying] == null) {
-//            playNum = 0;
-//            loadSound();
-//        }
-//    }   // END if ptnPlaying
-
-//}   // END OkButtonFunc
-
 // Save answers in array
 function saveAns2Array1() {
     var fileAns = filePlaying + 1;
@@ -121,28 +99,6 @@ function saveAns2Array2() {
     }
     debugShowLog(selectAns[filePlaying]);
 }   // END saveAnsFunc
-
-// 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
-//function saveArrayFunc() {
-//    console.log(filePlaying);
-//    console.log(ptnPlaying);
-//    console.log(selectAns[filePlaying]);
-//    console.log(selectAns);
-//    for (var i = 0; i < 3; ++i) {
-//        if (selectAns[filePlaying][i] != null) {
-//            AnsFill = AnsFill + 1;
-//        }
-//    }
-//    if (AnsFill == 3) {
-//        filePlaying = filePlaying + 1;
-//        if (filePlaying < 12) {
-//            loadSound();
-//        }
-//    } else {
-//        alert("回答が済んでいません!");
-//    }
-//    AnsFill = 0;
-//}   // END saveAnsFunc
 
 // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
 function saveArrayVal1(n_type) {
