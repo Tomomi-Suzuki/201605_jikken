@@ -5,8 +5,13 @@
     <title>201605 Listening Test</title>
 
     <style type="text/css">
-        p { width: 100%; }
-        p.lowHigh { line-height: 30%; }
+        p {
+            width: 100%;
+        }
+
+            p.lowHigh {
+                line-height: 30%;
+            }
     </style>
 
     <script src="jquery-1.7.1.min.js"></script>
@@ -38,127 +43,128 @@
         var point = new Array();
         point[0] = new Array();
         point[1] = new Array();
-        point[0][0] = new Array("111", "100", "110", "101", "011", "001", "010");
-        point[1][0] = new Array("111", "011", "010", "110", "100", "101", "001");
-        point[0][1] = new Array("111", "110", "100", "101", "001", "011", "010");
-        point[1][1] = new Array("111", "110", "100", "101", "001", "011", "010");
-        point[0][2] = new Array("111", "001", "101", "100", "011", "110", "010");
-        point[1][2] = new Array("111", "011", "101", "110", "001", "100", "010");
-        point[0][3] = new Array("111", "110", "100", "101", "001", "011", "010");
-        point[1][3] = new Array("111", "101", "110", "011", "010", "100", "001");
-        point[0][4] = new Array("111", "011", "110", "101", "001", "100", "010");
-        point[1][4] = new Array("111", "110", "010", "101", "011", "100", "001");
-        point[0][5] = new Array("111", "011", "001", "110", "100", "010", "101");
-        point[1][5] = new Array("111", "101", "011", "110", "010", "001", "100");
-        point[0][6] = new Array("111", "001", "011", "101", "110", "010", "100");
-        point[1][6] = new Array("111", "110", "100", "101", "001", "011", "010");
-        point[0][7] = new Array("111", "011", "001", "101", "100", "110", "010");
-        point[1][7] = new Array("111", "110", "101", "011", "001", "100", "010");
-        point[0][8] = new Array("111", "101", "010", "001", "100", "011", "110");
-        point[1][8] = new Array("111", "101", "010", "001", "100", "011", "110");
-        point[0][9] = new Array("111", "101", "001", "011", "010", "110", "100");
-        point[1][9] = new Array("111", "110", "101", "011", "010", "100", "001");
-        point[0][10] = new Array("111", "101", "011", "110", "100", "010", "001");
-        point[1][10] = new Array("111", "101", "011", "110", "100", "010", "001");
-        point[0][11] = new Array("111", "100", "110", "011", "010", "101", "001");
-        point[1][11] = new Array("111", "100", "110", "011", "010", "101", "001");
-        point[0][12] = new Array("111", "011", "010", "110", "100", "101", "001");
-        point[1][12] = new Array("111", "110", "101", "011", "010", "100", "001");
-        point[0][13] = new Array("111", "110", "011", "101", "001", "100", "010");
-        point[1][13] = new Array("111", "011", "010", "110", "100", "101", "001");
-        point[0][14] = new Array("111", "110", "010", "100", "001", "101", "011");
-        point[1][14] = new Array("111", "110", "100", "101", "001", "011", "010");
-        point[0][15] = new Array("111", "011", "101", "110", "001", "010", "100");
-        point[1][15] = new Array("111", "010", "110", "101", "011", "001", "100");
-        point[0][16] = new Array("111", "011", "101", "110", "100", "010", "001");
-        point[1][16] = new Array("111", "011", "010", "110", "101", "001", "100");
-        point[0][17] = new Array("111", "101", "001", "011", "010", "110", "100");
-        point[1][17] = new Array("111", "100", "011", "101", "110", "010", "001");
-        point[0][18] = new Array("111", "110", "101", "011", "010", "100", "001");
-        point[1][18] = new Array("111", "110", "101", "011", "010", "100", "001");
-        point[0][19] = new Array("111", "010", "110", "011", "001", "101", "100");
-        point[1][19] = new Array("111", "101", "100", "110", "010", "011", "001");
-        point[0][20] = new Array("111", "101", "001", "011", "010", "110", "100");
-        point[1][20] = new Array("111", "101", "011", "110", "010", "100", "001");
-        point[0][21] = new Array("111", "110", "100", "010", "001", "011", "101");
-        point[1][21] = new Array("111", "110", "100", "010", "001", "011", "101");
-        point[0][22] = new Array("111", "001", "011", "101", "110", "100", "010");
-        point[1][22] = new Array("111", "101", "110", "011", "010", "001", "100");
-        point[0][23] = new Array("111", "010", "101", "001", "110", "100", "011");
-        point[1][23] = new Array("111", "110", "101", "011", "010", "100", "001");
-        point[0][24] = new Array("111", "101", "011", "110", "001", "010", "100");
-        point[1][24] = new Array("111", "110", "100", "101", "001", "011", "010");
-        point[0][25] = new Array("111", "001", "101", "110", "100", "010", "011");
-        point[1][25] = new Array("111", "011", "101", "110", "010", "001", "100");
-        point[0][26] = new Array("111", "011", "001", "101", "100", "110", "010");
-        point[1][26] = new Array("111", "011", "001", "101", "100", "110", "010");
-        point[0][27] = new Array("111", "110", "010", "011", "001", "101", "100");
-        point[1][27] = new Array("111", "110", "011", "101", "100", "010", "001");
-        point[0][28] = new Array("111", "101", "011", "100", "110", "010", "001");
-        point[1][28] = new Array("111", "101", "011", "100", "110", "010", "001");
-        point[0][29] = new Array("111", "101", "011", "100", "110", "010", "001");
-        point[1][29] = new Array("111", "101", "011", "110", "001", "010", "100");
-        point[0][30] = new Array("111", "110", "010", "011", "001", "101", "100");
-        point[1][30] = new Array("111", "001", "010", "011", "101", "110", "100");
-        point[0][31] = new Array("111", "011", "010", "110", "100", "101", "001");
-        point[1][31] = new Array("111", "101", "110", "011", "001", "100", "010");
-        point[0][32] = new Array("111", "110", "101", "011", "001", "010", "100");
-        point[1][32] = new Array("111", "101", "100", "110", "010", "011", "001");
-        point[0][33] = new Array("111", "100", "010", "101", "011", "110", "001");
-        point[1][33] = new Array("111", "100", "010", "101", "011", "110", "001");
-        point[0][34] = new Array("111", "101", "011", "110", "100", "001", "010");
-        point[1][34] = new Array("111", "101", "110", "100", "001", "011", "010");
-        point[0][35] = new Array("111", "100", "101", "110", "011", "010", "001");
-        point[1][35] = new Array("111", "101", "100", "110", "010", "011", "001");
-        point[0][36] = new Array("111", "101", "110", "011", "001", "100", "010");
-        point[1][36] = new Array("111", "001", "110", "101", "011", "010", "100");
-        point[0][37] = new Array("111", "011", "010", "110", "100", "101", "001");
-        point[1][37] = new Array("111", "011", "010", "110", "100", "101", "001");
-        point[0][38] = new Array("111", "001", "110", "100", "010", "101", "011");
-        point[1][38] = new Array("111", "001", "110", "100", "010", "101", "011");
-        point[0][39] = new Array("111", "011", "010", "110", "100", "101", "001");
-        point[1][39] = new Array("111", "010", "001", "101", "100", "011", "110");
-        point[0][40] = new Array("111", "101", "110", "011", "100", "010", "001");
-        point[1][40] = new Array("111", "110", "010", "011", "101", "001", "100");
-        point[0][41] = new Array("111", "101", "100", "110", "010", "011", "001");
-        point[1][41] = new Array("111", "101", "110", "011", "010", "100", "001");
-        point[0][42] = new Array("111", "101", "110", "011", "100", "010", "001");
-        point[1][42] = new Array("111", "110", "010", "011", "001", "101", "100");
-        point[0][43] = new Array("111", "101", "100", "110", "010", "011", "001");
-        point[1][43] = new Array("111", "101", "100", "110", "010", "011", "001");
-        point[0][44] = new Array("111", "101", "011", "110", "001", "010", "100");
-        point[1][44] = new Array("111", "101", "011", "110", "001", "010", "100");
-        point[0][45] = new Array("111", "101", "110", "100", "001", "010", "011");
-        point[1][45] = new Array("111", "101", "001", "011", "010", "110", "100");
-        point[0][46] = new Array("111", "110", "011", "101", "100", "001", "010");
-        point[1][46] = new Array("111", "110", "011", "101", "100", "001", "010");
-        point[0][47] = new Array("111", "101", "110", "011", "100", "010", "001");
-        point[1][47] = new Array("111", "101", "001", "011", "010", "110", "100");
-        point[0][48] = new Array("111", "101", "110", "011", "001", "010", "100");
-        point[1][48] = new Array("111", "101", "110", "011", "001", "010", "100");
-        point[0][49] = new Array("111", "101", "001", "011", "010", "110", "100");
-        point[1][49] = new Array("111", "101", "001", "011", "010", "110", "100");
-        point[0][50] = new Array("111", "011", "001", "101", "100", "110", "010");
-        point[1][50] = new Array("111", "001", "101", "110", "100", "011", "010");
-        point[0][51] = new Array("111", "110", "011", "101", "010", "100", "001");
-        point[1][51] = new Array("111", "110", "100", "101", "001", "011", "010");
-        point[0][52] = new Array("111", "101", "011", "110", "100", "001", "010");
-        point[1][52] = new Array("111", "101", "011", "110", "100", "001", "010");
-        point[0][53] = new Array("111", "110", "011", "101", "100", "001", "010");
-        point[1][53] = new Array("111", "011", "001", "101", "100", "110", "010");
-        point[0][54] = new Array("111", "110", "010", "011", "001", "101", "100");
-        point[1][54] = new Array("111", "110", "010", "011", "001", "101", "100");
-        point[0][55] = new Array("111", "011", "001", "101", "100", "110", "010");
-        point[1][55] = new Array("111", "110", "101", "100", "010", "001", "011");
-        point[0][56] = new Array("111", "101", "011", "110", "100", "001", "010");
-        point[1][56] = new Array("111", "110", "010", "011", "001", "101", "100");
-        point[0][57] = new Array("111", "110", "010", "011", "001", "101", "100");
-        point[1][57] = new Array("111", "010", "001", "011", "110", "101", "100");
-        point[0][58] = new Array("111", "101", "100", "110", "010", "011", "001");
-        point[1][58] = new Array("111", "110", "101", "011", "100", "010", "001");
-        point[0][59] = new Array("111", "110", "101", "011", "100", "010", "001");
-        point[1][59] = new Array("111", "011", "001", "101", "100", "110", "010");
-
+        {
+            point[0][0] = new Array("111", "100", "110", "101", "011", "001", "010");
+            point[1][0] = new Array("111", "011", "010", "110", "100", "101", "001");
+            point[0][1] = new Array("111", "110", "100", "101", "001", "011", "010");
+            point[1][1] = new Array("111", "110", "100", "101", "001", "011", "010");
+            point[0][2] = new Array("111", "001", "101", "100", "011", "110", "010");
+            point[1][2] = new Array("111", "011", "101", "110", "001", "100", "010");
+            point[0][3] = new Array("111", "110", "100", "101", "001", "011", "010");
+            point[1][3] = new Array("111", "101", "110", "011", "010", "100", "001");
+            point[0][4] = new Array("111", "011", "110", "101", "001", "100", "010");
+            point[1][4] = new Array("111", "110", "010", "101", "011", "100", "001");
+            point[0][5] = new Array("111", "011", "001", "110", "100", "010", "101");
+            point[1][5] = new Array("111", "101", "011", "110", "010", "001", "100");
+            point[0][6] = new Array("111", "001", "011", "101", "110", "010", "100");
+            point[1][6] = new Array("111", "110", "100", "101", "001", "011", "010");
+            point[0][7] = new Array("111", "011", "001", "101", "100", "110", "010");
+            point[1][7] = new Array("111", "110", "101", "011", "001", "100", "010");
+            point[0][8] = new Array("111", "101", "010", "001", "100", "011", "110");
+            point[1][8] = new Array("111", "101", "010", "001", "100", "011", "110");
+            point[0][9] = new Array("111", "101", "001", "011", "010", "110", "100");
+            point[1][9] = new Array("111", "110", "101", "011", "010", "100", "001");
+            point[0][10] = new Array("111", "101", "011", "110", "100", "010", "001");
+            point[1][10] = new Array("111", "101", "011", "110", "100", "010", "001");
+            point[0][11] = new Array("111", "100", "110", "011", "010", "101", "001");
+            point[1][11] = new Array("111", "100", "110", "011", "010", "101", "001");
+            point[0][12] = new Array("111", "011", "010", "110", "100", "101", "001");
+            point[1][12] = new Array("111", "110", "101", "011", "010", "100", "001");
+            point[0][13] = new Array("111", "110", "011", "101", "001", "100", "010");
+            point[1][13] = new Array("111", "011", "010", "110", "100", "101", "001");
+            point[0][14] = new Array("111", "110", "010", "100", "001", "101", "011");
+            point[1][14] = new Array("111", "110", "100", "101", "001", "011", "010");
+            point[0][15] = new Array("111", "011", "101", "110", "001", "010", "100");
+            point[1][15] = new Array("111", "010", "110", "101", "011", "001", "100");
+            point[0][16] = new Array("111", "011", "101", "110", "100", "010", "001");
+            point[1][16] = new Array("111", "011", "010", "110", "101", "001", "100");
+            point[0][17] = new Array("111", "101", "001", "011", "010", "110", "100");
+            point[1][17] = new Array("111", "100", "011", "101", "110", "010", "001");
+            point[0][18] = new Array("111", "110", "101", "011", "010", "100", "001");
+            point[1][18] = new Array("111", "110", "101", "011", "010", "100", "001");
+            point[0][19] = new Array("111", "010", "110", "011", "001", "101", "100");
+            point[1][19] = new Array("111", "101", "100", "110", "010", "011", "001");
+            point[0][20] = new Array("111", "101", "001", "011", "010", "110", "100");
+            point[1][20] = new Array("111", "101", "011", "110", "010", "100", "001");
+            point[0][21] = new Array("111", "110", "100", "010", "001", "011", "101");
+            point[1][21] = new Array("111", "110", "100", "010", "001", "011", "101");
+            point[0][22] = new Array("111", "001", "011", "101", "110", "100", "010");
+            point[1][22] = new Array("111", "101", "110", "011", "010", "001", "100");
+            point[0][23] = new Array("111", "010", "101", "001", "110", "100", "011");
+            point[1][23] = new Array("111", "110", "101", "011", "010", "100", "001");
+            point[0][24] = new Array("111", "101", "011", "110", "001", "010", "100");
+            point[1][24] = new Array("111", "110", "100", "101", "001", "011", "010");
+            point[0][25] = new Array("111", "001", "101", "110", "100", "010", "011");
+            point[1][25] = new Array("111", "011", "101", "110", "010", "001", "100");
+            point[0][26] = new Array("111", "011", "001", "101", "100", "110", "010");
+            point[1][26] = new Array("111", "011", "001", "101", "100", "110", "010");
+            point[0][27] = new Array("111", "110", "010", "011", "001", "101", "100");
+            point[1][27] = new Array("111", "110", "011", "101", "100", "010", "001");
+            point[0][28] = new Array("111", "101", "011", "100", "110", "010", "001");
+            point[1][28] = new Array("111", "101", "011", "100", "110", "010", "001");
+            point[0][29] = new Array("111", "101", "011", "100", "110", "010", "001");
+            point[1][29] = new Array("111", "101", "011", "110", "001", "010", "100");
+            point[0][30] = new Array("111", "110", "010", "011", "001", "101", "100");
+            point[1][30] = new Array("111", "001", "010", "011", "101", "110", "100");
+            point[0][31] = new Array("111", "011", "010", "110", "100", "101", "001");
+            point[1][31] = new Array("111", "101", "110", "011", "001", "100", "010");
+            point[0][32] = new Array("111", "110", "101", "011", "001", "010", "100");
+            point[1][32] = new Array("111", "101", "100", "110", "010", "011", "001");
+            point[0][33] = new Array("111", "100", "010", "101", "011", "110", "001");
+            point[1][33] = new Array("111", "100", "010", "101", "011", "110", "001");
+            point[0][34] = new Array("111", "101", "011", "110", "100", "001", "010");
+            point[1][34] = new Array("111", "101", "110", "100", "001", "011", "010");
+            point[0][35] = new Array("111", "100", "101", "110", "011", "010", "001");
+            point[1][35] = new Array("111", "101", "100", "110", "010", "011", "001");
+            point[0][36] = new Array("111", "101", "110", "011", "001", "100", "010");
+            point[1][36] = new Array("111", "001", "110", "101", "011", "010", "100");
+            point[0][37] = new Array("111", "011", "010", "110", "100", "101", "001");
+            point[1][37] = new Array("111", "011", "010", "110", "100", "101", "001");
+            point[0][38] = new Array("111", "001", "110", "100", "010", "101", "011");
+            point[1][38] = new Array("111", "001", "110", "100", "010", "101", "011");
+            point[0][39] = new Array("111", "011", "010", "110", "100", "101", "001");
+            point[1][39] = new Array("111", "010", "001", "101", "100", "011", "110");
+            point[0][40] = new Array("111", "101", "110", "011", "100", "010", "001");
+            point[1][40] = new Array("111", "110", "010", "011", "101", "001", "100");
+            point[0][41] = new Array("111", "101", "100", "110", "010", "011", "001");
+            point[1][41] = new Array("111", "101", "110", "011", "010", "100", "001");
+            point[0][42] = new Array("111", "101", "110", "011", "100", "010", "001");
+            point[1][42] = new Array("111", "110", "010", "011", "001", "101", "100");
+            point[0][43] = new Array("111", "101", "100", "110", "010", "011", "001");
+            point[1][43] = new Array("111", "101", "100", "110", "010", "011", "001");
+            point[0][44] = new Array("111", "101", "011", "110", "001", "010", "100");
+            point[1][44] = new Array("111", "101", "011", "110", "001", "010", "100");
+            point[0][45] = new Array("111", "101", "110", "100", "001", "010", "011");
+            point[1][45] = new Array("111", "101", "001", "011", "010", "110", "100");
+            point[0][46] = new Array("111", "110", "011", "101", "100", "001", "010");
+            point[1][46] = new Array("111", "110", "011", "101", "100", "001", "010");
+            point[0][47] = new Array("111", "101", "110", "011", "100", "010", "001");
+            point[1][47] = new Array("111", "101", "001", "011", "010", "110", "100");
+            point[0][48] = new Array("111", "101", "110", "011", "001", "010", "100");
+            point[1][48] = new Array("111", "101", "110", "011", "001", "010", "100");
+            point[0][49] = new Array("111", "101", "001", "011", "010", "110", "100");
+            point[1][49] = new Array("111", "101", "001", "011", "010", "110", "100");
+            point[0][50] = new Array("111", "011", "001", "101", "100", "110", "010");
+            point[1][50] = new Array("111", "001", "101", "110", "100", "011", "010");
+            point[0][51] = new Array("111", "110", "011", "101", "010", "100", "001");
+            point[1][51] = new Array("111", "110", "100", "101", "001", "011", "010");
+            point[0][52] = new Array("111", "101", "011", "110", "100", "001", "010");
+            point[1][52] = new Array("111", "101", "011", "110", "100", "001", "010");
+            point[0][53] = new Array("111", "110", "011", "101", "100", "001", "010");
+            point[1][53] = new Array("111", "011", "001", "101", "100", "110", "010");
+            point[0][54] = new Array("111", "110", "010", "011", "001", "101", "100");
+            point[1][54] = new Array("111", "110", "010", "011", "001", "101", "100");
+            point[0][55] = new Array("111", "011", "001", "101", "100", "110", "010");
+            point[1][55] = new Array("111", "110", "101", "100", "010", "001", "011");
+            point[0][56] = new Array("111", "101", "011", "110", "100", "001", "010");
+            point[1][56] = new Array("111", "110", "010", "011", "001", "101", "100");
+            point[0][57] = new Array("111", "110", "010", "011", "001", "101", "100");
+            point[1][57] = new Array("111", "010", "001", "011", "110", "101", "100");
+            point[0][58] = new Array("111", "101", "100", "110", "010", "011", "001");
+            point[1][58] = new Array("111", "110", "101", "011", "100", "010", "001");
+            point[0][59] = new Array("111", "110", "101", "011", "100", "010", "001");
+            point[1][59] = new Array("111", "011", "001", "101", "100", "110", "010");
+        }
         var ptnNum = point[0][0].length;
 
         /* Names of sound files */
@@ -166,250 +172,254 @@
         var audioFile1 = new Array();
         audioFile1[0] = new Array();
         audioFile1[1] = new Array();
-        audioFile1[0][0] = "sound/ALPstream/outside/2c/2c_111_101_011_110_010_001_100";
-        audioFile1[1][0] = "sound/ALPstream/outside/2c/2c_111_110_010_011_001_101_100";
-        audioFile1[0][1] = "sound/ALPstream/outside/2c/2c_111_110_101_011_100_010_001";
-        audioFile1[1][1] = "sound/ALPstream/outside/2c/2c_111_011_001_110_100_010_101";
-        audioFile1[0][2] = "sound/ALPstream/outside/1c/1c_111_011_101_110_100_001_010";
-        audioFile1[1][2] = "sound/ALPstream/outside/1c/1c_111_010_101_011_001_110_100";
-        audioFile1[0][3] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
-        audioFile1[1][3] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_101_010_110_100_011";
-        audioFile1[0][4] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_011_010_101_001";
-        audioFile1[1][4] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_011_010_101_001";
-        audioFile1[0][5] = "sound/ALPstream/outside/1c/1c_111_110_010_011_001_101_100";
-        audioFile1[1][5] = "sound/ALPstream/outside/1c/1c_111_110_011_101_010_001_100";
-        audioFile1[0][6] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_100_110_101_010_011";
-        audioFile1[1][6] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
-        audioFile1[0][7] = "sound/ALPstream/outside/1c/1c_111_001_110_011_100_010_101";
-        audioFile1[1][7] = "sound/ALPstream/outside/1c/1c_111_001_110_011_100_010_101";
-        audioFile1[0][8] = "sound/ALPstream/outside/1c/1c_111_101_011_110_100_010_001";
-        audioFile1[1][8] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
-        audioFile1[0][9] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
-        audioFile1[1][9] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
-        audioFile1[0][10] = "sound/ALPstream/outside/2c/2c_111_110_011_101_010_100_001";
-        audioFile1[1][10] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
-        audioFile1[0][11] = "sound/ALPstream/outside/2c/2c_111_001_011_110_100_101_010";
-        audioFile1[1][11] = "sound/ALPstream/outside/2c/2c_111_110_011_101_010_100_001";
-        audioFile1[0][12] = "sound/ALPstream/outside/1c/1c_111_101_110_100_010_011_001";
-        audioFile1[1][12] = "sound/ALPstream/outside/1c/1c_111_011_010_110_100_101_001";
-        audioFile1[0][13] = "sound/ALPstream/outside/2c/2c_111_101_001_011_010_110_100";
-        audioFile1[1][13] = "sound/ALPstream/outside/2c/2c_111_011_101_110_010_100_001";
-        audioFile1[0][14] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
-        audioFile1[1][14] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
-        audioFile1[0][15] = "sound/ALPstream/outside/2c/2c_111_110_101_011_010_001_100";
-        audioFile1[1][15] = "sound/ALPstream/outside/2c/2c_111_100_011_110_010_101_001";
-        audioFile1[0][16] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_110_011_001_101_010";
-        audioFile1[1][16] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_001_100";
-        audioFile1[0][17] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_011_110_010_001";
-        audioFile1[1][17] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_100_010_001";
-        audioFile1[0][18] = "sound/ALPstream/outside/2c/2c_111_100_110_011_101_001_010";
-        audioFile1[1][18] = "sound/ALPstream/outside/2c/2c_111_110_010_011_001_101_100";
-        audioFile1[0][19] = "sound/ALPstream/outside/2c/2c_111_011_001_101_100_110_010";
-        audioFile1[1][19] = "sound/ALPstream/outside/2c/2c_111_101_100_010_110_011_001";
-        audioFile1[0][20] = "sound/ALPstream/outside/1c/1c_111_011_100_001_101_110_010";
-        audioFile1[1][20] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
-        audioFile1[0][21] = "sound/ALPstream/outside/2c/2c_111_101_011_110_100_001_010";
-        audioFile1[1][21] = "sound/ALPstream/outside/2c/2c_111_101_011_110_100_001_010";
-        audioFile1[0][22] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
-        audioFile1[1][22] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
-        audioFile1[0][23] = "sound/ALPstream/outside/1c/1c_111_011_110_101_100_001_010";
-        audioFile1[1][23] = "sound/ALPstream/outside/1c/1c_111_011_110_101_100_001_010";
-        audioFile1[0][24] = "sound/ALPstream/outside/1c/1c_111_110_001_011_010_100_101";
-        audioFile1[1][24] = "sound/ALPstream/outside/1c/1c_111_110_100_101_001_011_010";
-        audioFile1[0][25] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
-        audioFile1[1][25] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
-        audioFile1[0][26] = "sound/ALPstream/outside/1c/1c_111_110_011_101_100_010_001";
-        audioFile1[1][26] = "sound/ALPstream/outside/1c/1c_111_110_011_101_100_010_001";
-        audioFile1[0][27] = "sound/ALPstream/outside/2c/2c_111_100_110_101_011_010_001";
-        audioFile1[1][27] = "sound/ALPstream/outside/2c/2c_111_100_110_101_011_010_001";
-        audioFile1[0][28] = "sound/ALPstream/outside/2c/2c_111_101_100_110_010_011_001";
-        audioFile1[1][28] = "sound/ALPstream/outside/2c/2c_111_001_101_011_100_010_110";
-        audioFile1[0][29] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
-        audioFile1[1][29] = "sound/ALPstream/outside/2c/2c_111_101_100_010_011_110_001";
-        audioFile1[0][30] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_001_101_010_110_011";
-        audioFile1[1][30] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_001_101_010_110_011";
-        audioFile1[0][31] = "sound/ALPstream/outside/1c/1c_111_001_101_010_011_100_110";
-        audioFile1[1][31] = "sound/ALPstream/outside/1c/1c_111_001_101_010_011_100_110";
-        audioFile1[0][32] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
-        audioFile1[1][32] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_100_101_011_110_010";
-        audioFile1[0][33] = "sound/ALPstream/outside/2c/2c_111_011_110_101_100_001_010";
-        audioFile1[1][33] = "sound/ALPstream/outside/2c/2c_111_011_110_100_101_001_010";
-        audioFile1[0][34] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_011_101_010_100_001";
-        audioFile1[1][34] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
-        audioFile1[0][35] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
-        audioFile1[1][35] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
-        audioFile1[0][36] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_001_101_100_110_010";
-        audioFile1[1][36] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_101_011_001_010_100";
-        audioFile1[0][37] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_100_001_010";
-        audioFile1[1][37] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
-        audioFile1[0][38] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
-        audioFile1[1][38] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
-        audioFile1[0][39] = "sound/ALPstream/outside/2c/2c_111_101_100_110_010_011_001";
-        audioFile1[1][39] = "sound/ALPstream/outside/2c/2c_111_110_101_011_001_010_100";
-        audioFile1[0][40] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_010_100_001";
-        audioFile1[1][40] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_010_110_100_101_001";
-        audioFile1[0][41] = "sound/ALPstream/outside/2c/2c_111_011_101_110_001_100_010";
-        audioFile1[1][41] = "sound/ALPstream/outside/2c/2c_111_011_101_110_001_100_010";
-        audioFile1[0][42] = "sound/ALPstream/outside/1c/1c_111_011_110_101_001_010_100";
-        audioFile1[1][42] = "sound/ALPstream/outside/1c/1c_111_101_100_110_010_011_001";
-        audioFile1[0][43] = "sound/ALPstream/outside/1c/1c_111_110_010_100_001_101_011";
-        audioFile1[1][43] = "sound/ALPstream/outside/1c/1c_111_110_101_011_100_001_010";
-        audioFile1[0][44] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
-        audioFile1[1][44] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_011_101_001_100_010";
-        audioFile1[0][45] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_101_001_011_010";
-        audioFile1[1][45] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_010_110_001_011_101_100";
-        audioFile1[0][46] = "sound/ALPstream/outside/1c/1c_111_011_010_110_100_101_001";
-        audioFile1[1][46] = "sound/ALPstream/outside/1c/1c_111_011_101_110_010_001_100";
-        audioFile1[0][47] = "sound/ALPstream/outside/2c/2c_111_110_101_011_010_001_100";
-        audioFile1[1][47] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
-        audioFile1[0][48] = "sound/ALPstream/outside/2c/2c_111_011_100_010_001_101_110";
-        audioFile1[1][48] = "sound/ALPstream/outside/2c/2c_111_011_100_010_001_101_110";
-        audioFile1[0][49] = "sound/ALPstream/outside/1c/1c_111_010_011_110_001_101_100";
-        audioFile1[1][49] = "sound/ALPstream/outside/1c/1c_111_101_100_110_010_011_001";
-        audioFile1[0][50] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_100_001_010";
-        audioFile1[1][50] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_101_001_011_010";
-        audioFile1[0][51] = "sound/ALPstream/outside/1c/1c_111_011_101_110_001_010_100";
-        audioFile1[1][51] = "sound/ALPstream/outside/1c/1c_111_101_010_011_100_110_001";
-        audioFile1[0][52] = "sound/ALPstream/outside/1c/1c_111_101_011_110_100_010_001";
-        audioFile1[1][52] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
-        audioFile1[0][53] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_110_100_010_101_011";
-        audioFile1[1][53] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_010_100_001";
-        audioFile1[0][54] = "sound/ALPstream/outside/1c/1c_111_110_100_101_001_011_010";
-        audioFile1[1][54] = "sound/ALPstream/outside/1c/1c_111_011_110_101_001_010_100";
-        audioFile1[0][55] = "sound/ALPstream/outside/2c/2c_111_011_001_101_100_110_010";
-        audioFile1[1][55] = "sound/ALPstream/outside/2c/2c_111_011_110_101_010_001_100";
-        audioFile1[0][56] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_110_101_010_100_001";
-        audioFile1[1][56] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_110_101_010_100_001";
-        audioFile1[0][57] = "sound/ALPstream/outside/1c/1c_111_101_011_110_001_100_010";
-        audioFile1[1][57] = "sound/ALPstream/outside/1c/1c_111_101_110_100_001_011_010";
-        audioFile1[0][58] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_110_010_011_001_101";
-        audioFile1[1][58] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_011_110_100_001_010";
-        audioFile1[0][59] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_100_001";
-        audioFile1[1][59] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_100_001";
+        {
+            audioFile1[0][0] = "sound/ALPstream/outside/2c/2c_111_101_011_110_010_001_100";
+            audioFile1[1][0] = "sound/ALPstream/outside/2c/2c_111_110_010_011_001_101_100";
+            audioFile1[0][1] = "sound/ALPstream/outside/2c/2c_111_110_101_011_100_010_001";
+            audioFile1[1][1] = "sound/ALPstream/outside/2c/2c_111_011_001_110_100_010_101";
+            audioFile1[0][2] = "sound/ALPstream/outside/1c/1c_111_011_101_110_100_001_010";
+            audioFile1[1][2] = "sound/ALPstream/outside/1c/1c_111_010_101_011_001_110_100";
+            audioFile1[0][3] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
+            audioFile1[1][3] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_101_010_110_100_011";
+            audioFile1[0][4] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_011_010_101_001";
+            audioFile1[1][4] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_011_010_101_001";
+            audioFile1[0][5] = "sound/ALPstream/outside/1c/1c_111_110_010_011_001_101_100";
+            audioFile1[1][5] = "sound/ALPstream/outside/1c/1c_111_110_011_101_010_001_100";
+            audioFile1[0][6] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_100_110_101_010_011";
+            audioFile1[1][6] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
+            audioFile1[0][7] = "sound/ALPstream/outside/1c/1c_111_001_110_011_100_010_101";
+            audioFile1[1][7] = "sound/ALPstream/outside/1c/1c_111_001_110_011_100_010_101";
+            audioFile1[0][8] = "sound/ALPstream/outside/1c/1c_111_101_011_110_100_010_001";
+            audioFile1[1][8] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
+            audioFile1[0][9] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
+            audioFile1[1][9] = "sound/ALPstream/outside/1c/1c_111_101_001_011_010_110_100";
+            audioFile1[0][10] = "sound/ALPstream/outside/2c/2c_111_110_011_101_010_100_001";
+            audioFile1[1][10] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
+            audioFile1[0][11] = "sound/ALPstream/outside/2c/2c_111_001_011_110_100_101_010";
+            audioFile1[1][11] = "sound/ALPstream/outside/2c/2c_111_110_011_101_010_100_001";
+            audioFile1[0][12] = "sound/ALPstream/outside/1c/1c_111_101_110_100_010_011_001";
+            audioFile1[1][12] = "sound/ALPstream/outside/1c/1c_111_011_010_110_100_101_001";
+            audioFile1[0][13] = "sound/ALPstream/outside/2c/2c_111_101_001_011_010_110_100";
+            audioFile1[1][13] = "sound/ALPstream/outside/2c/2c_111_011_101_110_010_100_001";
+            audioFile1[0][14] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
+            audioFile1[1][14] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
+            audioFile1[0][15] = "sound/ALPstream/outside/2c/2c_111_110_101_011_010_001_100";
+            audioFile1[1][15] = "sound/ALPstream/outside/2c/2c_111_100_011_110_010_101_001";
+            audioFile1[0][16] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_110_011_001_101_010";
+            audioFile1[1][16] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_001_100";
+            audioFile1[0][17] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_011_110_010_001";
+            audioFile1[1][17] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_100_010_001";
+            audioFile1[0][18] = "sound/ALPstream/outside/2c/2c_111_100_110_011_101_001_010";
+            audioFile1[1][18] = "sound/ALPstream/outside/2c/2c_111_110_010_011_001_101_100";
+            audioFile1[0][19] = "sound/ALPstream/outside/2c/2c_111_011_001_101_100_110_010";
+            audioFile1[1][19] = "sound/ALPstream/outside/2c/2c_111_101_100_010_110_011_001";
+            audioFile1[0][20] = "sound/ALPstream/outside/1c/1c_111_011_100_001_101_110_010";
+            audioFile1[1][20] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
+            audioFile1[0][21] = "sound/ALPstream/outside/2c/2c_111_101_011_110_100_001_010";
+            audioFile1[1][21] = "sound/ALPstream/outside/2c/2c_111_101_011_110_100_001_010";
+            audioFile1[0][22] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
+            audioFile1[1][22] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
+            audioFile1[0][23] = "sound/ALPstream/outside/1c/1c_111_011_110_101_100_001_010";
+            audioFile1[1][23] = "sound/ALPstream/outside/1c/1c_111_011_110_101_100_001_010";
+            audioFile1[0][24] = "sound/ALPstream/outside/1c/1c_111_110_001_011_010_100_101";
+            audioFile1[1][24] = "sound/ALPstream/outside/1c/1c_111_110_100_101_001_011_010";
+            audioFile1[0][25] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
+            audioFile1[1][25] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
+            audioFile1[0][26] = "sound/ALPstream/outside/1c/1c_111_110_011_101_100_010_001";
+            audioFile1[1][26] = "sound/ALPstream/outside/1c/1c_111_110_011_101_100_010_001";
+            audioFile1[0][27] = "sound/ALPstream/outside/2c/2c_111_100_110_101_011_010_001";
+            audioFile1[1][27] = "sound/ALPstream/outside/2c/2c_111_100_110_101_011_010_001";
+            audioFile1[0][28] = "sound/ALPstream/outside/2c/2c_111_101_100_110_010_011_001";
+            audioFile1[1][28] = "sound/ALPstream/outside/2c/2c_111_001_101_011_100_010_110";
+            audioFile1[0][29] = "sound/ALPstream/outside/2c/2c_111_011_010_110_100_101_001";
+            audioFile1[1][29] = "sound/ALPstream/outside/2c/2c_111_101_100_010_011_110_001";
+            audioFile1[0][30] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_001_101_010_110_011";
+            audioFile1[1][30] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_001_101_010_110_011";
+            audioFile1[0][31] = "sound/ALPstream/outside/1c/1c_111_001_101_010_011_100_110";
+            audioFile1[1][31] = "sound/ALPstream/outside/1c/1c_111_001_101_010_011_100_110";
+            audioFile1[0][32] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
+            audioFile1[1][32] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_100_101_011_110_010";
+            audioFile1[0][33] = "sound/ALPstream/outside/2c/2c_111_011_110_101_100_001_010";
+            audioFile1[1][33] = "sound/ALPstream/outside/2c/2c_111_011_110_100_101_001_010";
+            audioFile1[0][34] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_011_101_010_100_001";
+            audioFile1[1][34] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_001_011_010_110_100";
+            audioFile1[0][35] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
+            audioFile1[1][35] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
+            audioFile1[0][36] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_001_101_100_110_010";
+            audioFile1[1][36] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_101_011_001_010_100";
+            audioFile1[0][37] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_100_001_010";
+            audioFile1[1][37] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_010_011_001_101_100";
+            audioFile1[0][38] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
+            audioFile1[1][38] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
+            audioFile1[0][39] = "sound/ALPstream/outside/2c/2c_111_101_100_110_010_011_001";
+            audioFile1[1][39] = "sound/ALPstream/outside/2c/2c_111_110_101_011_001_010_100";
+            audioFile1[0][40] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_010_100_001";
+            audioFile1[1][40] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_010_110_100_101_001";
+            audioFile1[0][41] = "sound/ALPstream/outside/2c/2c_111_011_101_110_001_100_010";
+            audioFile1[1][41] = "sound/ALPstream/outside/2c/2c_111_011_101_110_001_100_010";
+            audioFile1[0][42] = "sound/ALPstream/outside/1c/1c_111_011_110_101_001_010_100";
+            audioFile1[1][42] = "sound/ALPstream/outside/1c/1c_111_101_100_110_010_011_001";
+            audioFile1[0][43] = "sound/ALPstream/outside/1c/1c_111_110_010_100_001_101_011";
+            audioFile1[1][43] = "sound/ALPstream/outside/1c/1c_111_110_101_011_100_001_010";
+            audioFile1[0][44] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_100_110_010_011_001";
+            audioFile1[1][44] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_011_101_001_100_010";
+            audioFile1[0][45] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_101_001_011_010";
+            audioFile1[1][45] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_010_110_001_011_101_100";
+            audioFile1[0][46] = "sound/ALPstream/outside/1c/1c_111_011_010_110_100_101_001";
+            audioFile1[1][46] = "sound/ALPstream/outside/1c/1c_111_011_101_110_010_001_100";
+            audioFile1[0][47] = "sound/ALPstream/outside/2c/2c_111_110_101_011_010_001_100";
+            audioFile1[1][47] = "sound/ALPstream/outside/2c/2c_111_110_100_101_001_011_010";
+            audioFile1[0][48] = "sound/ALPstream/outside/2c/2c_111_011_100_010_001_101_110";
+            audioFile1[1][48] = "sound/ALPstream/outside/2c/2c_111_011_100_010_001_101_110";
+            audioFile1[0][49] = "sound/ALPstream/outside/1c/1c_111_010_011_110_001_101_100";
+            audioFile1[1][49] = "sound/ALPstream/outside/1c/1c_111_101_100_110_010_011_001";
+            audioFile1[0][50] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_100_001_010";
+            audioFile1[1][50] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_110_100_101_001_011_010";
+            audioFile1[0][51] = "sound/ALPstream/outside/1c/1c_111_011_101_110_001_010_100";
+            audioFile1[1][51] = "sound/ALPstream/outside/1c/1c_111_101_010_011_100_110_001";
+            audioFile1[0][52] = "sound/ALPstream/outside/1c/1c_111_101_011_110_100_010_001";
+            audioFile1[1][52] = "sound/ALPstream/outside/1c/1c_111_011_001_101_100_110_010";
+            audioFile1[0][53] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_001_110_100_010_101_011";
+            audioFile1[1][53] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_110_011_010_100_001";
+            audioFile1[0][54] = "sound/ALPstream/outside/1c/1c_111_110_100_101_001_011_010";
+            audioFile1[1][54] = "sound/ALPstream/outside/1c/1c_111_011_110_101_001_010_100";
+            audioFile1[0][55] = "sound/ALPstream/outside/2c/2c_111_011_001_101_100_110_010";
+            audioFile1[1][55] = "sound/ALPstream/outside/2c/2c_111_011_110_101_010_001_100";
+            audioFile1[0][56] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_110_101_010_100_001";
+            audioFile1[1][56] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_110_101_010_100_001";
+            audioFile1[0][57] = "sound/ALPstream/outside/1c/1c_111_101_011_110_001_100_010";
+            audioFile1[1][57] = "sound/ALPstream/outside/1c/1c_111_101_110_100_001_011_010";
+            audioFile1[0][58] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_100_110_010_011_001_101";
+            audioFile1[1][58] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_101_011_110_100_001_010";
+            audioFile1[0][59] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_100_001";
+            audioFile1[1][59] = "sound/ALPstream/3srcs/ho1000_sp_f120_sp_m240_111_011_101_110_010_100_001";
+        }
         //for comparison of efficiency
         var audioFile2 = new Array();
         audioFile2[0] = new Array();
         audioFile2[1] = new Array();
-        audioFile2[0][0] = "sound/outside/2c/2c_sw";
-        audioFile2[1][0] = audioFile2[0][0];
-        audioFile2[0][1] = "sound/outside/2c/2c_sw";
-        audioFile2[1][1] = audioFile2[0][1];
-        audioFile2[0][2] = "sound/outside/2c/2c_sw";
-        audioFile2[1][2] = audioFile2[0][2];
-        audioFile2[0][3] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][3] = audioFile2[0][3];
-        audioFile2[0][4] = "sound/outside/2c/2c_sw";
-        audioFile2[1][4] = audioFile2[0][4];
-        audioFile2[0][5] = "sound/outside/2c/2c_sw";
-        audioFile2[1][5] = audioFile2[0][5];
-        audioFile2[0][6] = "sound/outside/1c/1c_sw";
-        audioFile2[1][6] = audioFile2[0][6];
-        audioFile2[0][7] = "sound/outside/1c/1c_sw";
-        audioFile2[1][7] = audioFile2[0][7];
-        audioFile2[0][8] = "sound/outside/2c/2c_sw";
-        audioFile2[1][8] = audioFile2[0][8];
-        audioFile2[0][9] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][9] = audioFile2[0][9];
-        audioFile2[0][10] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][10] = audioFile2[0][10];
-        audioFile2[0][11] = "sound/outside/1c/1c_sw";
-        audioFile2[1][11] = audioFile2[0][11];
-        audioFile2[0][12] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][12] = audioFile2[0][12];
-        audioFile2[0][13] = "sound/outside/2c/2c_sw";
-        audioFile2[1][13] = audioFile2[0][13];
-        audioFile2[0][14] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][14] = audioFile2[0][14];
-        audioFile2[0][15] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][15] = audioFile2[0][15];
-        audioFile2[0][16] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][16] = audioFile2[0][16];
-        audioFile2[0][17] = "sound/outside/2c/2c_sw";
-        audioFile2[1][17] = audioFile2[0][17];
-        audioFile2[0][18] = "sound/outside/2c/2c_sw";
-        audioFile2[1][18] = audioFile2[0][18];
-        audioFile2[0][19] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][19] = audioFile2[0][19];
-        audioFile2[0][20] = "sound/outside/2c/2c_sw";
-        audioFile2[1][20] = audioFile2[0][20];
-        audioFile2[0][21] = "sound/outside/1c/1c_sw";
-        audioFile2[1][21] = audioFile2[0][21];
-        audioFile2[0][22] = "sound/outside/1c/1c_sw";
-        audioFile2[1][22] = audioFile2[0][22];
-        audioFile2[0][23] = "sound/outside/1c/1c_sw";
-        audioFile2[1][23] = audioFile2[0][23];
-        audioFile2[0][24] = "sound/outside/2c/2c_sw";
-        audioFile2[1][24] = audioFile2[0][24];
-        audioFile2[0][25] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][25] = audioFile2[0][25];
-        audioFile2[0][26] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][26] = audioFile2[0][26];
-        audioFile2[0][27] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][27] = audioFile2[0][27];
-        audioFile2[0][28] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][28] = audioFile2[0][28];
-        audioFile2[0][29] = "sound/outside/2c/2c_sw";
-        audioFile2[1][29] = audioFile2[0][29];
-        audioFile2[0][30] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][30] = audioFile2[0][30];
-        audioFile2[0][31] = "sound/outside/1c/1c_sw";
-        audioFile2[1][31] = audioFile2[0][31];
-        audioFile2[0][32] = "sound/outside/2c/2c_sw";
-        audioFile2[1][32] = audioFile2[0][32];
-        audioFile2[0][33] = "sound/outside/2c/2c_sw";
-        audioFile2[1][33] = audioFile2[0][33];
-        audioFile2[0][34] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][34] = audioFile2[0][34];
-        audioFile2[0][35] = "sound/outside/2c/2c_sw";
-        audioFile2[1][35] = audioFile2[0][35];
-        audioFile2[0][36] = "sound/outside/1c/1c_sw";
-        audioFile2[1][36] = audioFile2[0][36];
-        audioFile2[0][37] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][37] = audioFile2[0][37];
-        audioFile2[0][38] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][38] = audioFile2[0][38];
-        audioFile2[0][39] = "sound/outside/1c/1c_sw";
-        audioFile2[1][39] = audioFile2[0][39];
-        audioFile2[0][40] = "sound/outside/1c/1c_sw";
-        audioFile2[1][40] = audioFile2[0][40];
-        audioFile2[0][41] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][41] = audioFile2[0][41];
-        audioFile2[0][42] = "sound/outside/1c/1c_sw";
-        audioFile2[1][42] = audioFile2[0][42];
-        audioFile2[0][43] = "sound/outside/1c/1c_sw";
-        audioFile2[1][43] = audioFile2[0][43];
-        audioFile2[0][44] = "sound/outside/1c/1c_sw";
-        audioFile2[1][44] = audioFile2[0][44];
-        audioFile2[0][45] = "sound/outside/1c/1c_sw";
-        audioFile2[1][45] = audioFile2[0][45];
-        audioFile2[0][46] = "sound/outside/2c/2c_sw";
-        audioFile2[1][46] = audioFile2[0][46];
-        audioFile2[0][47] = "sound/outside/1c/1c_sw";
-        audioFile2[1][47] = audioFile2[0][47];
-        audioFile2[0][48] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][48] = audioFile2[0][48];
-        audioFile2[0][49] = "sound/outside/1c/1c_sw";
-        audioFile2[1][49] = audioFile2[0][49];
-        audioFile2[0][50] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][50] = audioFile2[0][50];
-        audioFile2[0][51] = "sound/outside/1c/1c_sw";
-        audioFile2[1][51] = audioFile2[0][51];
-        audioFile2[0][52] = "sound/outside/1c/1c_sw";
-        audioFile2[1][52] = audioFile2[0][52];
-        audioFile2[0][53] = "sound/outside/2c/2c_sw";
-        audioFile2[1][53] = audioFile2[0][53];
-        audioFile2[0][54] = "sound/outside/2c/2c_sw";
-        audioFile2[1][54] = audioFile2[0][54];
-        audioFile2[0][55] = "sound/outside/1c/1c_sw";
-        audioFile2[1][55] = audioFile2[0][55];
-        audioFile2[0][56] = "sound/outside/2c/2c_sw";
-        audioFile2[1][56] = audioFile2[0][56];
-        audioFile2[0][57] = "sound/outside/2c/2c_sw";
-        audioFile2[1][57] = audioFile2[0][57];
-        audioFile2[0][58] = "sound/outside/1c/1c_sw";
-        audioFile2[1][58] = audioFile2[0][58];
-        audioFile2[0][59] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
-        audioFile2[1][59] = audioFile2[0][59];
+        {
+            audioFile2[0][0] = "sound/outside/2c/2c_sw";
+            audioFile2[1][0] = audioFile2[0][0];
+            audioFile2[0][1] = "sound/outside/2c/2c_sw";
+            audioFile2[1][1] = audioFile2[0][1];
+            audioFile2[0][2] = "sound/outside/2c/2c_sw";
+            audioFile2[1][2] = audioFile2[0][2];
+            audioFile2[0][3] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][3] = audioFile2[0][3];
+            audioFile2[0][4] = "sound/outside/2c/2c_sw";
+            audioFile2[1][4] = audioFile2[0][4];
+            audioFile2[0][5] = "sound/outside/2c/2c_sw";
+            audioFile2[1][5] = audioFile2[0][5];
+            audioFile2[0][6] = "sound/outside/1c/1c_sw";
+            audioFile2[1][6] = audioFile2[0][6];
+            audioFile2[0][7] = "sound/outside/1c/1c_sw";
+            audioFile2[1][7] = audioFile2[0][7];
+            audioFile2[0][8] = "sound/outside/2c/2c_sw";
+            audioFile2[1][8] = audioFile2[0][8];
+            audioFile2[0][9] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][9] = audioFile2[0][9];
+            audioFile2[0][10] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][10] = audioFile2[0][10];
+            audioFile2[0][11] = "sound/outside/1c/1c_sw";
+            audioFile2[1][11] = audioFile2[0][11];
+            audioFile2[0][12] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][12] = audioFile2[0][12];
+            audioFile2[0][13] = "sound/outside/2c/2c_sw";
+            audioFile2[1][13] = audioFile2[0][13];
+            audioFile2[0][14] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][14] = audioFile2[0][14];
+            audioFile2[0][15] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][15] = audioFile2[0][15];
+            audioFile2[0][16] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][16] = audioFile2[0][16];
+            audioFile2[0][17] = "sound/outside/2c/2c_sw";
+            audioFile2[1][17] = audioFile2[0][17];
+            audioFile2[0][18] = "sound/outside/2c/2c_sw";
+            audioFile2[1][18] = audioFile2[0][18];
+            audioFile2[0][19] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][19] = audioFile2[0][19];
+            audioFile2[0][20] = "sound/outside/2c/2c_sw";
+            audioFile2[1][20] = audioFile2[0][20];
+            audioFile2[0][21] = "sound/outside/1c/1c_sw";
+            audioFile2[1][21] = audioFile2[0][21];
+            audioFile2[0][22] = "sound/outside/1c/1c_sw";
+            audioFile2[1][22] = audioFile2[0][22];
+            audioFile2[0][23] = "sound/outside/1c/1c_sw";
+            audioFile2[1][23] = audioFile2[0][23];
+            audioFile2[0][24] = "sound/outside/2c/2c_sw";
+            audioFile2[1][24] = audioFile2[0][24];
+            audioFile2[0][25] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][25] = audioFile2[0][25];
+            audioFile2[0][26] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][26] = audioFile2[0][26];
+            audioFile2[0][27] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][27] = audioFile2[0][27];
+            audioFile2[0][28] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][28] = audioFile2[0][28];
+            audioFile2[0][29] = "sound/outside/2c/2c_sw";
+            audioFile2[1][29] = audioFile2[0][29];
+            audioFile2[0][30] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][30] = audioFile2[0][30];
+            audioFile2[0][31] = "sound/outside/1c/1c_sw";
+            audioFile2[1][31] = audioFile2[0][31];
+            audioFile2[0][32] = "sound/outside/2c/2c_sw";
+            audioFile2[1][32] = audioFile2[0][32];
+            audioFile2[0][33] = "sound/outside/2c/2c_sw";
+            audioFile2[1][33] = audioFile2[0][33];
+            audioFile2[0][34] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][34] = audioFile2[0][34];
+            audioFile2[0][35] = "sound/outside/2c/2c_sw";
+            audioFile2[1][35] = audioFile2[0][35];
+            audioFile2[0][36] = "sound/outside/1c/1c_sw";
+            audioFile2[1][36] = audioFile2[0][36];
+            audioFile2[0][37] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][37] = audioFile2[0][37];
+            audioFile2[0][38] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][38] = audioFile2[0][38];
+            audioFile2[0][39] = "sound/outside/1c/1c_sw";
+            audioFile2[1][39] = audioFile2[0][39];
+            audioFile2[0][40] = "sound/outside/1c/1c_sw";
+            audioFile2[1][40] = audioFile2[0][40];
+            audioFile2[0][41] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][41] = audioFile2[0][41];
+            audioFile2[0][42] = "sound/outside/1c/1c_sw";
+            audioFile2[1][42] = audioFile2[0][42];
+            audioFile2[0][43] = "sound/outside/1c/1c_sw";
+            audioFile2[1][43] = audioFile2[0][43];
+            audioFile2[0][44] = "sound/outside/1c/1c_sw";
+            audioFile2[1][44] = audioFile2[0][44];
+            audioFile2[0][45] = "sound/outside/1c/1c_sw";
+            audioFile2[1][45] = audioFile2[0][45];
+            audioFile2[0][46] = "sound/outside/2c/2c_sw";
+            audioFile2[1][46] = audioFile2[0][46];
+            audioFile2[0][47] = "sound/outside/1c/1c_sw";
+            audioFile2[1][47] = audioFile2[0][47];
+            audioFile2[0][48] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][48] = audioFile2[0][48];
+            audioFile2[0][49] = "sound/outside/1c/1c_sw";
+            audioFile2[1][49] = audioFile2[0][49];
+            audioFile2[0][50] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][50] = audioFile2[0][50];
+            audioFile2[0][51] = "sound/outside/1c/1c_sw";
+            audioFile2[1][51] = audioFile2[0][51];
+            audioFile2[0][52] = "sound/outside/1c/1c_sw";
+            audioFile2[1][52] = audioFile2[0][52];
+            audioFile2[0][53] = "sound/outside/2c/2c_sw";
+            audioFile2[1][53] = audioFile2[0][53];
+            audioFile2[0][54] = "sound/outside/2c/2c_sw";
+            audioFile2[1][54] = audioFile2[0][54];
+            audioFile2[0][55] = "sound/outside/1c/1c_sw";
+            audioFile2[1][55] = audioFile2[0][55];
+            audioFile2[0][56] = "sound/outside/2c/2c_sw";
+            audioFile2[1][56] = audioFile2[0][56];
+            audioFile2[0][57] = "sound/outside/2c/2c_sw";
+            audioFile2[1][57] = audioFile2[0][57];
+            audioFile2[0][58] = "sound/outside/1c/1c_sw";
+            audioFile2[1][58] = audioFile2[0][58];
+            audioFile2[0][59] = "sound/3srcs/ho1000_sp_f120_sp_m240_sw";
+            audioFile2[1][59] = audioFile2[0][59];
+        }
 
         /* Arrays to play sound files */
         //for comparison of naturality
@@ -429,32 +439,37 @@
 </head>
 
 <body onload="iniFunc()">
-    <h3 style="padding-left:1em">聴取実験</h3>
-    <p>3種類の音が混ざった音を複数聞いて指示されたとおりの聞こえ方の音を選んでください．2問1セットのものが60セット用意されています．<br />
-    【手順】<br />
-    Data1の#1から始めてください．<br />
-    1. Play/Stopボタンを押すと音が再生されますので，聞きやすい音量になるようPCの音量を調節してください．<br />
-    2. バーを動かしてマウスを離すと音が切り替わります．ドラッグしたままでは音は切り替わりません．バーが一番右にあるときは音が流れません．<br />
-    3. バーを左端から右端まで順に動かして全ての音を聞いた後，指示に最も適した聞こえ方をする位置にバーを合わせてから，Play/Stopボタンで音を止めます．選び直したいときは再度Play/Stopボタンで音を再生できます．音は繰り返しされます(繰り返しのときに１秒ほど無音となります)<br />
-    4. バーの右のOKボタンを押すとバーの位置が記録されます．OKボタンを押す前に，音が一時停止状態であることを確認してください．再生中にOKボタンを押してしまうと結果が正しく記録されないことがあります．<br />
-    5. 続いて#2でも同様に音を聞き，OKボタンでバーの位置を記録してください．<br />
-    6. #1, #2の回答が済んだら枠の外の質問「聞こえ方を比べやすいのはどちらでしたか？」に答えてください．このとき音の聞き直しができませんので十分注意してください．<br />
-    7. 回答漏れがないか確認してからAnswer Saveボタンを押します．ボタンは1回のみ押してください．また，回答漏れがあると警告が出ますのでその場合は回答をし直して再度ボタンを押してください．<br />
-    8. 次のData2以降も上記と同様の手順で回答をします．<br />
-    9. Data12まで終了したら，最後にFINISHボタンを押してください．表示された指示に従ってファイルの保存を行ってください．保存したファイルはsuzuki.tomomi@g.sp.m.is.nagoya-u.ac.jp宛てに送信してください．<br />
-    * 注意事項 *<br />
-    実験を行う際はヘッドホンまたはイヤホンを使用してください．<br />
-    必要があれば，実験の途中であっても音量を変えてください．<br />
-    必ずData1の#1, #2, Data2の#1, #2という順番で回答してください．戻って回答をすると，結果が正しく記録されないことがあります．<br />
-    #1と#2で全く同じ聞こえ方の音を選ぶ必要はありません．それぞれバーを動かして聞き比べた音の中から判断してください．<br />
-</p>
+    <p>
+        この実験は2部構成となっています．いずれも音声を聞いて設問に回答するものです．TEST1で60問，TEST2で60問が用意されています．<br />
+        * 注意事項 *<br />
+        実験を行う際は指定のヘッドホン(ATH-A900)を使用してください．<br />
+        必要があれば，実験の途中であっても音量を変えてください．<br />
+        必ずTEST1, TEST2の順に進めてください．それぞれ最初に記載されている文章をよく読んで実験を行ってください．<br />
+        実験の途中で合っても必要に応じて休憩を取って構いません．実験を再開する場合は中断したところから再開するようにしてください．<br />
+    </p>
     <!-- << TEST 1 >>========================================================================================= -->
     <h2 style="padding-left:10pt">TEST 1</h2>
+    <p>
+        3種類の音が混ざった音を2パターン聞いて，設問に回答してください．再生される音は途中でそれぞれの音源の音量が大きくなったり小さくなったりします．2パターン1セットのものが60セット用意されています．<br />
+        【手順】<br />
+        Data1の#1から始めてください．<br />
+        1. Play/Stopボタンを押すと音が再生されますので，聞きやすい音量になるようPCの音量を調節してください．<br />
+        2. #1を聞き終わったらPlay/Stopボタンで一時停止します．聞き直したいときは再度Play/Stopボタンで一時停止を解除できます．音は繰り返し再生されます(繰り返しのときに１秒ほど無音となります)<br />
+        3. 続いて同様に#2を聞きます．Play/Stopボタンで音を止めた後，すぐ下の設問に答えてください．
+        4. #1, #2を両方聞いた後，枠の外の質問「聞こえる音が違和感なく変化していたのはどちらですか？」に答えてください．<br />
+        2パターンの音を聞いて，それぞれの音源(人の声，目覚まし時計の音など)の音量の変化の違和感が少なかったほうを選択してください．どちらも同じように変化していると感じた場合は「どちらも同じ」を選択してください<br />
+        5. 回答漏れがないか確認してからAnswer Saveボタンを押します．ボタンは1回のみ押してください．また，回答漏れがあると警告が出ますのでその場合は回答をし直して再度ボタンを押してください．<br />
+        6. Data2以降も上記と同様の手順で回答をします．<br />
+        7. Data60まで終了したら，そのままTEST2を開始してください．<br />
+        * 注意事項 *<br />
+        必ずData1の#1, #2, Data2の#1, #2という順番で音を聞いてください．<br />
+    </p>
+
     <!-- <<Data 1>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 1. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -487,7 +502,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 2. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -520,7 +535,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 3. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -553,7 +568,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 4. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -586,7 +601,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 5. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -619,7 +634,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 6. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -652,7 +667,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 7. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -685,7 +700,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 8. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -718,7 +733,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 9. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -751,7 +766,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 10. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -784,7 +799,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 11. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -817,7 +832,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 12. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -850,7 +865,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 13. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -883,7 +898,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 14. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -916,7 +931,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 15. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -949,7 +964,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 16. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -982,7 +997,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 17. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1015,7 +1030,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 18. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1048,7 +1063,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 19. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1081,7 +1096,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 20. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1114,7 +1129,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 21. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1147,7 +1162,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 22. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1180,7 +1195,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 23. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1213,7 +1228,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 24. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1246,7 +1261,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 25. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1279,7 +1294,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 26. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1312,7 +1327,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 27. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1345,7 +1360,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 28. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1378,7 +1393,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 29. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1411,7 +1426,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 30. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1444,7 +1459,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 31. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1477,7 +1492,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 32. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1510,7 +1525,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 33. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1543,7 +1558,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 34. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1576,7 +1591,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 35. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1609,7 +1624,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 36. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1642,7 +1657,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 37. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1675,7 +1690,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 38. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1708,7 +1723,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 39. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1741,7 +1756,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 40. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1774,7 +1789,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 41. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1807,7 +1822,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 42. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1840,7 +1855,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 43. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1873,7 +1888,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 44. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1906,7 +1921,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 45. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1939,7 +1954,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 46. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -1972,7 +1987,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 47. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2005,7 +2020,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 48. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2038,7 +2053,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 49. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2071,7 +2086,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 50. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2104,7 +2119,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 51. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2137,7 +2152,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 52. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2170,7 +2185,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 53. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2203,7 +2218,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 54. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2236,7 +2251,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 55. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2269,7 +2284,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 56. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2302,7 +2317,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 57. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2335,7 +2350,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 58. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2368,7 +2383,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 59. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2401,7 +2416,7 @@
     <hr align="left" width="1100" color="#ffc8c8">
     <h3 style="padding-left:10pt">Data 60. 以下の2種類の音を聞いて質問に答えてください</h3>
     <!--Play sounds-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="300" height="70">
         <tr>
             <!--#1-->
             <td>
@@ -2432,9 +2447,26 @@
 
     <!-- << TEST 2 >>========================================================================================= -->
     <h2 style="padding-left:10pt">TEST 2</h2>
+    <p>
+        3種類の音が混ざった音を複数聞いて指示されたとおりの聞こえ方の音を選んでください．2問1セットのものが60セット用意されています．<br />
+        【手順】<br />
+        Data1の#1から始めてください．<br />
+        1. Play/Stopボタンを押すと音が再生されますので，聞きやすい音量になるようPCの音量を調節してください．<br />
+        2. バーを動かしてマウスを離すと音が切り替わります．ドラッグしたままでは音は切り替わりません．<br />
+        3. バーを左端から右端まで順に動かして全ての音を聞いた後，指示に最も適した聞こえ方をする位置にバーを合わせてから，Play/Stopボタンで音を止めます．<br />
+        選び直したいときは再度Play/Stopボタンで音を再生できます．音は繰り返し再生されます(繰り返しのときに１秒ほど無音となります)<br />
+        4. 続いて#2でも同様に音を聞き，適切だと思われる位置にバーを移動させてください．<br />
+        5. #1, #2の回答が済んだら枠の外の質問「指示された音を探しやすかったのはどちらですか？」に答えてください．このとき音の聞き直しができません．探しやすさに差がないと感じた場合は「どちらも同じ」を選択してください<br />
+        6. 回答漏れがないか確認してからAnswer Saveボタンを押します．ボタンは1回のみ押してください．また，回答漏れがあると警告が出ますのでその場合は回答をし直して再度ボタンを押してください．<br />
+        7. 次のData2以降も上記と同様の手順で回答をします．<br />
+        8. Data60まで終了したら，最後にFINISHボタンを押してください．表示された指示に従ってファイルの保存を行ってください．保存したファイルはsuzuki.tomomi@g.sp.m.is.nagoya-u.ac.jp宛てに送信してください．<br />
+        * 注意事項 *<br />
+        必ずData1の#1, #2, Data2の#1, #2という順番で回答してください．戻って回答をすると，結果が正しく記録されないことがあります．<br />
+        #1と#2で全く同じ聞こえ方の音を選ぶ必要はありません．それぞれバーを動かして聞き比べた音の中から判断してください．<br />
+    </p>
     <!-- <<Data 1>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 1. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 1. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2456,7 +2488,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf061" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2471,7 +2503,7 @@
 
     <!-- <<Data 2>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 2. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 2. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2493,7 +2525,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf062" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2508,7 +2540,7 @@
 
     <!-- <<Data 3>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 3. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 3. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2530,7 +2562,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf063" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2545,7 +2577,7 @@
 
     <!-- <<Data 4>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 4. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 4. 男性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2567,7 +2599,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf064" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2582,7 +2614,7 @@
 
     <!-- <<Data 5>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 5. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 5. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2604,7 +2636,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf065" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2619,7 +2651,7 @@
 
     <!-- <<Data 6>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 6. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 6. 時計の音が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2641,7 +2673,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf066" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2656,7 +2688,7 @@
 
     <!-- <<Data 7>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 7. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 7. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2678,7 +2710,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf067" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2690,10 +2722,10 @@
     <button onclick="saveArrayVal2(1);">Answer Save</button>
     <a id="saveArray" href=""></a>
     <p class="ls_normal"></p>
-    
+
     <!-- <<Data 8>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 8. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 8. 時計の音が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2715,7 +2747,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf068" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2730,7 +2762,7 @@
 
     <!-- <<Data 9>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 9. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 9. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2752,7 +2784,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf069" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2767,7 +2799,7 @@
 
     <!-- <<Data 10>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 10. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 10. 男性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2789,7 +2821,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf070" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2804,7 +2836,7 @@
 
     <!-- <<Data 11>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 11. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 11. 女性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2826,7 +2858,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf071" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2841,7 +2873,7 @@
 
     <!-- <<Data 12>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 12. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 12. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2863,7 +2895,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf072" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2878,7 +2910,7 @@
 
     <!-- <<Data 13>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 13. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 13. 人の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2900,7 +2932,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf073" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2915,7 +2947,7 @@
 
     <!-- <<Data 14>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 14. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 14. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2937,7 +2969,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf074" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2952,7 +2984,7 @@
 
     <!-- <<Data 15>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 15. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 15. 人の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -2974,7 +3006,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf075" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -2989,7 +3021,7 @@
 
     <!-- <<Data 16>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 16. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 16. 2人の人物の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3011,7 +3043,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf076" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3026,7 +3058,7 @@
 
     <!-- <<Data 17>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 17. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 17. 男性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3048,7 +3080,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf077" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3063,7 +3095,7 @@
 
     <!-- <<Data 18>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 18. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 18. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3085,7 +3117,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf078" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3100,7 +3132,7 @@
 
     <!-- <<Data 19>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 19. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 19. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3122,7 +3154,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf079" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3137,7 +3169,7 @@
 
     <!-- <<Data 20>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 20. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 20. 人の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3159,7 +3191,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf080" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3174,7 +3206,7 @@
 
     <!-- <<Data 21>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 21. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 21. 時計の音が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3196,7 +3228,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf081" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3211,7 +3243,7 @@
 
     <!-- <<Data 22>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 22. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 22. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3233,7 +3265,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf082" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3248,7 +3280,7 @@
 
     <!-- <<Data 23>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 23. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 23. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3270,7 +3302,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf083" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3285,7 +3317,7 @@
 
     <!-- <<Data 24>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 24. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 24. 女性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3307,7 +3339,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf084" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3322,7 +3354,7 @@
 
     <!-- <<Data 25>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 25. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 25. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3344,7 +3376,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf085" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3359,7 +3391,7 @@
 
     <!-- <<Data 26>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 26. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 26. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3381,7 +3413,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf086" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3396,7 +3428,7 @@
 
     <!-- <<Data 27>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 27. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 27. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3418,7 +3450,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf087" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3433,7 +3465,7 @@
 
     <!-- <<Data 28>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 28. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 28. 2人の人物の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3455,7 +3487,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf088" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3470,7 +3502,7 @@
 
     <!-- <<Data 29>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 29. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 29. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3492,7 +3524,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf089" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3507,7 +3539,7 @@
 
     <!-- <<Data 30>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 30. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 30. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3529,7 +3561,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf090" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3544,7 +3576,7 @@
 
     <!-- <<Data 31>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 31. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 31. 男性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3566,7 +3598,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf091" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3581,7 +3613,7 @@
 
     <!-- <<Data 32>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 32. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 32. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3603,7 +3635,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf092" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3618,7 +3650,7 @@
 
     <!-- <<Data 33>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 33. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 33. 女性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3640,7 +3672,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf093" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3655,7 +3687,7 @@
 
     <!-- <<Data 34>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 34. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 34. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3677,7 +3709,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf094" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3692,7 +3724,7 @@
 
     <!-- <<Data 35>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 35. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 35. 男性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3714,7 +3746,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf095" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3729,7 +3761,7 @@
 
     <!-- <<Data 36>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 36. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 36. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3751,7 +3783,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf096" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3766,7 +3798,7 @@
 
     <!-- <<Data 37>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 37. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 37. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3788,7 +3820,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf097" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3803,7 +3835,7 @@
 
     <!-- <<Data 38>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 38. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 38. 2人の人物の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3825,7 +3857,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf098" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3840,7 +3872,7 @@
 
     <!-- <<Data 39>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 39. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 39. 男性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3862,7 +3894,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf099" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3877,7 +3909,7 @@
 
     <!-- <<Data 40>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 40. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 40. 女性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3899,7 +3931,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf100" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3914,7 +3946,7 @@
 
     <!-- <<Data 41>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 41. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 41. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3936,7 +3968,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf101" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3951,7 +3983,7 @@
 
     <!-- <<Data 42>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 42. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 42. 人の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -3973,7 +4005,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf102" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -3988,7 +4020,7 @@
 
     <!-- <<Data 43>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 43. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 43. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4010,7 +4042,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf103" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4025,7 +4057,7 @@
 
     <!-- <<Data 44>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 44. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 44. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4047,7 +4079,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf104" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4062,7 +4094,7 @@
 
     <!-- <<Data 45>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 45. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 45. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4084,7 +4116,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf105" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4099,7 +4131,7 @@
 
     <!-- <<Data 46>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 46. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 46. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4121,7 +4153,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf106" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4136,7 +4168,7 @@
 
     <!-- <<Data 47>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 47. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 47. 時計の音が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4158,7 +4190,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf107" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4173,7 +4205,7 @@
 
     <!-- <<Data 48>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 48. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 48. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4195,7 +4227,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf108" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4210,7 +4242,7 @@
 
     <!-- <<Data 49>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 49. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 49. 2人の人物の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4232,7 +4264,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf109" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4247,7 +4279,7 @@
 
     <!-- <<Data 50>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 50. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 50. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4269,7 +4301,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf110" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4284,7 +4316,7 @@
 
     <!-- <<Data 51>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 51. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 51. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4306,7 +4338,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf111" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4321,7 +4353,7 @@
 
     <!-- <<Data 52>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 52. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 52. 時計の音が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4343,7 +4375,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf112" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4358,7 +4390,7 @@
 
     <!-- <<Data 53>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 53. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 53. 女性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4380,7 +4412,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf113" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4395,7 +4427,7 @@
 
     <!-- <<Data 54>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 54. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 54. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4417,7 +4449,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf114" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4432,7 +4464,7 @@
 
     <!-- <<Data 55>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 55. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 55. 女性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4454,7 +4486,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf115" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4469,7 +4501,7 @@
 
     <!-- <<Data 56>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 56. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 56. 時計の音が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4491,7 +4523,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf116" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4506,7 +4538,7 @@
 
     <!-- <<Data 57>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 57. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 57. 女性の声が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4528,7 +4560,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf117" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4543,7 +4575,7 @@
 
     <!-- <<Data 58>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 58. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 58. 時計の音が最も聞こえにくいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4565,7 +4597,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf118" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4580,7 +4612,7 @@
 
     <!-- <<Data 59>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 59. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 59. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4602,7 +4634,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf109" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
@@ -4617,7 +4649,7 @@
 
     <!-- <<Data 60>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 60. xxxxx</h3>
+    <h3 style="padding-left:10pt">Data 60. 男性の声が最も聞こえやすいものを選んでください</h3>
     <!--音の再生・選択-->
     <table border="1" width="700" height="70">
         <tr>
@@ -4639,7 +4671,7 @@
     </table>
     <!--評価回答-->
     <form name="selectbox">
-        <p class="lowHigh">Q. 聞こえ方を比べやすいのはどちらでしたか？</p>
+        <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
         <select id="selectEf120" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
