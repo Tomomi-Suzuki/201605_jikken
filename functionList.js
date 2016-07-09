@@ -89,7 +89,9 @@ function saveAns2Array1() {
     debugShowLog(selectAns[filePlaying]);
 }   // END saveAnsFunc
 function saveAns2Array2() {
-    var fileAns = filePlaying + 1;
+    var fileNum = filePlaying + 1;
+
+    // Save efficiency value
     if (fileAns < 10) {
         var nameOpt = "selectEf00" + fileAns;
     } else if (fileAns < 100) {
@@ -100,9 +102,23 @@ function saveAns2Array2() {
     debugShowLog(nameOpt);
     var idOpt = document.getElementById(nameOpt);
     selectAns[filePlaying][0] = idOpt.options[idOpt.selectedIndex].value;
-    for (var n = 0; n < cmpNum; ++n) {
-        selectAns[filePlaying][n + 1] = playNum[n];
+
+    // Save sliders' value
+    if (fileNum < 10) {
+        var nameSld = "slider0" + fileNum;
+    } else {
+        var nameSld = "slider" + fileNum;
     }
+    for (n = 0; n <= 1; ++n) {
+        nameSld = nameSld + "_" + n;
+        var idSld = document.getElementById(nameSld);
+        sldNum = idSld.value;
+        selectAns[filePlaying][n + 1] = point[filePlaying][n][sldNum];
+    }
+
+    //for (var n = 0; n < cmpNum; ++n) {
+    //    selectAns[filePlaying][n + 1] = playNum[n];
+    //}
     debugShowLog(selectAns[filePlaying]);
 }   // END saveAnsFunc
 
