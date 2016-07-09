@@ -107,15 +107,23 @@ function saveAns2Array2() {
 }   // END saveAnsFunc
 
 // 各ファイルが終わったら回答漏れがないか確認，なければ次の音データを読み込み
-function saveArrayVal1(n_type) {
+function saveArrayVal1(n_type, n_playing) {
+    n_playing = n_playing - 1;
+    for (n_audio = 0; n_audio <= 1; ++n_audio) {
+        if (audioPlaying[n_audio] == true) {
+            audioArray1[n_audio].pause();
+            audioPlaying[n_audio] = false;
+        }
+        debugShowLog(audioPlaying);
+    }
     var AnsFill = 0;
     for (var n = 0; n < quesNum[n_type]; ++n) {
-        if (selectAns[filePlaying][n] != null) {
+        if (selectAns[n_playing][n] != null) {
             AnsFill = AnsFill + 1;
         }
     }
     if (AnsFill == quesNum[n_type]) {
-        filePlaying = filePlaying + 1;
+        filePlaying = n_playing + 1;
         if (filePlaying < trialNum[n_type]) {
             loadSound1(0);
             loadSound1(1);
@@ -126,16 +134,24 @@ function saveArrayVal1(n_type) {
         alert("Select answer!");
     }
 }   // END saveAnsFunc
-function saveArrayVal2(n_type) {
+function saveArrayVal2(n_type, n_playing) {
+    n_playing = n_playing - 1;
+    for (n_audio = 0; n_audio <= 1; ++n_audio) {
+        if (audioPlaying[n_audio] == true) {
+            audioArray1[n_audio].pause();
+            audioPlaying[n_audio] = false;
+        }
+        debugShowLog(audioPlaying);
+    }
     var AnsFill = 0;
     for (var n = 0; n < quesNum[n_type]; ++n) {
-        if (selectAns[filePlaying][n] != null) {
+        if (selectAns[n_playing][n] != null) {
             AnsFill = AnsFill + 1;
         }
     }
     debugShowLog(AnsFill);
     if (AnsFill == quesNum[n_type]) {
-        filePlaying = filePlaying + 1;
+        filePlaying = n_playing + 1;
         if (filePlaying < arraySum(trialNum)) {
             loadSound2(0);
             loadSound2(1);
