@@ -27,6 +27,7 @@
         var cmpNum = 2;   // Number of compared data
         var filePlaying = 0;   // # of playing question
         var playNum = new Array(0, 0);   // Which pattern is playing ()
+        var sldNum = 0;   // Temporal lider position
         var ptnPlaying = 0;  // パターン選択回答用
         var quesNum = new Array(1, 3);   // Number of compared data
         var trialNum = new Array(60, 60);
@@ -467,19 +468,19 @@
 
     <!-- <<Data 1>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 1. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 1. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -492,7 +493,7 @@
             <option value="2">#2</option>
             <option value="0">どちらも同じ</option>
         </select>
-    </form>
+    </form> 
     <!--Save answer in array saving txt-->
     <button onclick="saveArrayVal1(0, 1);">Answer Save</button>
     <a id="saveArray" href=""></a>
@@ -500,19 +501,19 @@
 
     <!-- <<Data 2>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 2. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 2. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -533,19 +534,19 @@
 
     <!-- <<Data 3>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 3. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 3. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -566,19 +567,19 @@
 
     <!-- <<Data 4>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 4. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 4. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -599,19 +600,19 @@
 
     <!-- <<Data 5>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 5. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 5. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -632,19 +633,19 @@
 
     <!-- <<Data 6>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 6. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 6. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -665,19 +666,19 @@
 
     <!-- <<Data 7>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 7. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 7. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -698,19 +699,19 @@
 
     <!-- <<Data 8>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 8. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 8. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -731,19 +732,19 @@
 
     <!-- <<Data 9>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 9. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 9. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -764,19 +765,19 @@
 
     <!-- <<Data 10>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 10. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 10. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -797,19 +798,19 @@
 
     <!-- <<Data 11>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 11. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 11. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -830,19 +831,19 @@
 
     <!-- <<Data 12>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 12. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 12. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -863,19 +864,19 @@
 
     <!-- <<Data 13>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 13. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 13. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -896,19 +897,19 @@
 
     <!-- <<Data 14>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 14. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 14. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -929,19 +930,19 @@
 
     <!-- <<Data 15>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 15. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 15. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -962,19 +963,19 @@
 
     <!-- <<Data 16>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 16. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 16. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -995,19 +996,19 @@
 
     <!-- <<Data 17>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 17. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 17. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1028,19 +1029,19 @@
 
     <!-- <<Data 18>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 18. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 18. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1061,19 +1062,19 @@
 
     <!-- <<Data 19>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 19. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 19. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1094,19 +1095,19 @@
 
     <!-- <<Data 20>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 20. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 20. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1127,19 +1128,19 @@
 
     <!-- <<Data 21>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 21. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 21. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1160,19 +1161,19 @@
 
     <!-- <<Data 22>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 22. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 22. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1193,19 +1194,19 @@
 
     <!-- <<Data 23>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 23. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 23. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1226,19 +1227,19 @@
 
     <!-- <<Data 24>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 24. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 24. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1259,19 +1260,19 @@
 
     <!-- <<Data 25>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 25. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 25. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1292,19 +1293,19 @@
 
     <!-- <<Data 26>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 26. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 26. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1325,19 +1326,19 @@
 
     <!-- <<Data 27>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 27. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 27. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1358,19 +1359,19 @@
 
     <!-- <<Data 28>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 28. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 28. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1391,19 +1392,19 @@
 
     <!-- <<Data 29>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 29. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 29. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1424,19 +1425,19 @@
 
     <!-- <<Data 30>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 30. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 30. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1457,19 +1458,19 @@
 
     <!-- <<Data 31>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 31. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 31. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1490,19 +1491,19 @@
 
     <!-- <<Data 32>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 32. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 32. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1523,19 +1524,19 @@
 
     <!-- <<Data 33>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 33. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 33. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1556,19 +1557,19 @@
 
     <!-- <<Data 34>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 34. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 34. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1589,19 +1590,19 @@
 
     <!-- <<Data 35>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 35. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 35. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1622,19 +1623,19 @@
 
     <!-- <<Data 36>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 36. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 36. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1655,19 +1656,19 @@
 
     <!-- <<Data 37>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 37. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 37. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1688,19 +1689,19 @@
 
     <!-- <<Data 38>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 38. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 38. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1721,19 +1722,19 @@
 
     <!-- <<Data 39>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 39. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 39. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1754,19 +1755,19 @@
 
     <!-- <<Data 40>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 40. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 40. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1787,19 +1788,19 @@
 
     <!-- <<Data 41>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 41. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 41. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1820,19 +1821,19 @@
 
     <!-- <<Data 42>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 42. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 42. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1853,19 +1854,19 @@
 
     <!-- <<Data 43>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 43. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 43. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1886,19 +1887,19 @@
 
     <!-- <<Data 44>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 44. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 44. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1919,19 +1920,19 @@
 
     <!-- <<Data 45>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 45. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 45. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1952,19 +1953,19 @@
 
     <!-- <<Data 46>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 46. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 46. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -1985,19 +1986,19 @@
 
     <!-- <<Data 47>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 47. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 47. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2018,19 +2019,19 @@
 
     <!-- <<Data 48>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 48. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 48. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2051,19 +2052,19 @@
 
     <!-- <<Data 49>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 49. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 49. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2084,19 +2085,19 @@
 
     <!-- <<Data 50>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 50. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 50. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2117,19 +2118,19 @@
 
     <!-- <<Data 51>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 51. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 51. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2150,19 +2151,19 @@
 
     <!-- <<Data 52>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 52. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 52. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2183,19 +2184,19 @@
 
     <!-- <<Data 53>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 53. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 53. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2216,19 +2217,19 @@
 
     <!-- <<Data 54>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 54. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 54. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2249,19 +2250,19 @@
 
     <!-- <<Data 55>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 55. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 55. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2282,19 +2283,19 @@
 
     <!-- <<Data 56>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 56. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 56. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2315,19 +2316,19 @@
 
     <!-- <<Data 57>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 57. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 57. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2348,19 +2349,19 @@
 
     <!-- <<Data 58>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 58. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 58. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2381,19 +2382,19 @@
 
     <!-- <<Data 59>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 59. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 59. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2414,19 +2415,19 @@
 
     <!-- <<Data 60>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 60. 以下の2種類の音を聞いて質問に答えてください</h3>
+    <h4 style="padding-left:10pt">Data 60. 以下の2種類の音を聞いて質問に答えてください</h4>
     <!--Play sounds-->
-    <table border="1" width="300" height="70">
+    <table border="1" width="300" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(0)">Play/Stop</button>
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc1(1)">Play/Stop</button>
             </td>
         </tr>
     </table>
@@ -2466,21 +2467,21 @@
     </p>
     <!-- <<Data 1>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 1. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 1. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider061_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider061_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2498,26 +2499,26 @@
     </form>
     <!--結果を書き込み-->
     <button onclick="saveArrayVal2(1, 1);">Answer Save</button>
-    <a id="saveArray" href=""></a>
+    <a id="saveArray" href=""></a>s
     <p class="ls_normal"></p>
 
     <!-- <<Data 2>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 2. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 2. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider062_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider062_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2540,21 +2541,21 @@
 
     <!-- <<Data 3>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 3. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 3. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider063_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider063_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2577,21 +2578,21 @@
 
     <!-- <<Data 4>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 4. 男性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 4. 男性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider064_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider064_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2614,21 +2615,21 @@
 
     <!-- <<Data 5>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 5. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 5. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider065_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider065_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2651,21 +2652,21 @@
 
     <!-- <<Data 6>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 6. 時計の音が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 6. 時計の音が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider066_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider066_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2688,21 +2689,21 @@
 
     <!-- <<Data 7>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 7. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 7. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider067_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider067_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2725,21 +2726,21 @@
 
     <!-- <<Data 8>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 8. 時計の音が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 8. 時計の音が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider068_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider068_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2762,21 +2763,21 @@
 
     <!-- <<Data 9>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 9. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 9. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider069_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider069_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2799,21 +2800,21 @@
 
     <!-- <<Data 10>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 10. 男性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 10. 男性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider070_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider070_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2836,21 +2837,21 @@
 
     <!-- <<Data 11>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 11. 女性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 11. 女性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider071_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider071_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2873,21 +2874,21 @@
 
     <!-- <<Data 12>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 12. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 12. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider072_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider072_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2910,21 +2911,21 @@
 
     <!-- <<Data 13>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 13. 人の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 13. 人の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider073_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider073_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2947,21 +2948,21 @@
 
     <!-- <<Data 14>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 14. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 14. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider074_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider074_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -2984,21 +2985,21 @@
 
     <!-- <<Data 15>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 15. 人の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 15. 人の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider075_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider075_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3021,21 +3022,21 @@
 
     <!-- <<Data 16>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 16. 2人の人物の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 16. 2人の人物の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider076_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider076_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3058,21 +3059,21 @@
 
     <!-- <<Data 17>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 17. 男性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 17. 男性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider077_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider077_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3095,21 +3096,21 @@
 
     <!-- <<Data 18>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 18. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 18. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider078_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider078_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3132,21 +3133,21 @@
 
     <!-- <<Data 19>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 19. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 19. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider079_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider079_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3169,21 +3170,21 @@
 
     <!-- <<Data 20>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 20. 人の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 20. 人の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider080_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider080_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3206,21 +3207,21 @@
 
     <!-- <<Data 21>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 21. 時計の音が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 21. 時計の音が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider081_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider081_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3243,21 +3244,21 @@
 
     <!-- <<Data 22>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 22. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 22. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider082_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider082_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3280,21 +3281,21 @@
 
     <!-- <<Data 23>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 23. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 23. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider083_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider083_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3317,21 +3318,21 @@
 
     <!-- <<Data 24>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 24. 女性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 24. 女性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider084_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider084_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3354,21 +3355,21 @@
 
     <!-- <<Data 25>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 25. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 25. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider085_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider085_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3391,21 +3392,21 @@
 
     <!-- <<Data 26>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 26. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 26. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider086_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider086_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3428,21 +3429,21 @@
 
     <!-- <<Data 27>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 27. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 27. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider087_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider087_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3465,21 +3466,21 @@
 
     <!-- <<Data 28>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 28. 2人の人物の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 28. 2人の人物の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider088_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider088_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3502,21 +3503,21 @@
 
     <!-- <<Data 29>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 29. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 29. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider089_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider089_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3539,21 +3540,21 @@
 
     <!-- <<Data 30>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 30. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 30. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider090_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider090_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3570,27 +3571,27 @@
         </select>
     </form>
     <!--結果を書き込み-->
-    <button onclick="saveArrayVal2(1.30);">Answer Save</button>
+    <button onclick="saveArrayVal2(1, 30);">Answer Save</button>
     <a id="saveArray" href=""></a>
     <p class="ls_normal"></p>
 
     <!-- <<Data 31>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 31. 男性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 31. 男性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider091_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider091_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3613,21 +3614,21 @@
 
     <!-- <<Data 32>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 32. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 32. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider092_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider092_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3650,21 +3651,21 @@
 
     <!-- <<Data 33>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 33. 女性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 33. 女性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider093_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider093_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3687,21 +3688,21 @@
 
     <!-- <<Data 34>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 34. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 34. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider094_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider094_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3724,21 +3725,21 @@
 
     <!-- <<Data 35>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 35. 男性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 35. 男性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider095_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider095_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3761,21 +3762,21 @@
 
     <!-- <<Data 36>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 36. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 36. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider096_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider096_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3798,21 +3799,21 @@
 
     <!-- <<Data 37>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 37. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 37. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider097_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider097_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3835,21 +3836,21 @@
 
     <!-- <<Data 38>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 38. 2人の人物の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 38. 2人の人物の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider098_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider098_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3872,21 +3873,21 @@
 
     <!-- <<Data 39>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 39. 男性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 39. 男性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider099_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider099_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3909,21 +3910,21 @@
 
     <!-- <<Data 40>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 40. 女性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 40. 女性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider100_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider100_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3946,21 +3947,21 @@
 
     <!-- <<Data 41>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 41. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 41. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider101_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider101_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -3983,21 +3984,21 @@
 
     <!-- <<Data 42>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 42. 人の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 42. 人の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider102_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider102_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4020,21 +4021,21 @@
 
     <!-- <<Data 43>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 43. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 43. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider103_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider103_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4051,27 +4052,27 @@
         </select>
     </form>
     <!--結果を書き込み-->
-    <button onclick="saveArrayVal2(1.43);">Answer Save</button>
+    <button onclick="saveArrayVal2(1,43);">Answer Save</button>
     <a id="saveArray" href=""></a>
     <p class="ls_normal"></p>
 
     <!-- <<Data 44>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 44. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 44. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider104_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider104_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4094,21 +4095,21 @@
 
     <!-- <<Data 45>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 45. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 45. 時計の音と女性の声の両方が聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider105_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider105_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4131,21 +4132,21 @@
 
     <!-- <<Data 46>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 46. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 46. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider106_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider106_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4168,21 +4169,21 @@
 
     <!-- <<Data 47>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 47. 時計の音が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 47. 時計の音が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider107_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider107_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4205,21 +4206,21 @@
 
     <!-- <<Data 48>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 48. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 48. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider108_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider108_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4242,21 +4243,21 @@
 
     <!-- <<Data 49>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 49. 2人の人物の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 49. 2人の人物の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider109_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider109_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4279,21 +4280,21 @@
 
     <!-- <<Data 50>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 50. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 50. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider110_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider110_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4316,21 +4317,21 @@
 
     <!-- <<Data 51>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 51. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 51. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider111_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider111_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4353,21 +4354,21 @@
 
     <!-- <<Data 52>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 52. 時計の音が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 52. 時計の音が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider112_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider112_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4390,21 +4391,21 @@
 
     <!-- <<Data 53>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 53. 女性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 53. 女性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider113_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider113_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4427,21 +4428,21 @@
 
     <!-- <<Data 54>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 54. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 54. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider114_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider114_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4464,21 +4465,21 @@
 
     <!-- <<Data 55>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 55. 女性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 55. 女性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider115_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider115_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4501,21 +4502,21 @@
 
     <!-- <<Data 56>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 56. 時計の音が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 56. 時計の音が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider116_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider116_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4538,21 +4539,21 @@
 
     <!-- <<Data 57>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 57. 女性の声が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 57. 女性の声が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider117_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider117_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4575,21 +4576,21 @@
 
     <!-- <<Data 58>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 58. 時計の音が最も聞こえにくいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 58. 時計の音が最も聞こえにくいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider118_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider118_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4612,21 +4613,21 @@
 
     <!-- <<Data 59>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 59. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 59. 時計の音と女性の声の両方が聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider119_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider119_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4635,7 +4636,7 @@
     <!--評価回答-->
     <form name="selectbox">
         <p class="lowHigh">Q. 指示された音を探しやすかったのはどちらですか？</p>
-        <select id="selectEf109" onchange="saveAns2Array2()">
+        <select id="selectEf119" onchange="saveAns2Array2()">
             <option value="">*選んでください</option>
             <option value="1">#1</option>
             <option value="2">#2</option>
@@ -4649,21 +4650,21 @@
 
     <!-- <<Data 60>>------------------------------------------------------------------------------------------- -->
     <hr align="left" width="1100" color="#ffc8c8">
-    <h3 style="padding-left:10pt">Data 60. 男性の声が最も聞こえやすいものを選んでください</h3>
+    <h4 style="padding-left:10pt">Data 60. 男性の声が最も聞こえやすいものを選んでください</h4>
     <!--音の再生・選択-->
-    <table border="1" width="700" height="70">
+    <table border="1" width="500" height="50">
         <tr>
             <!--#1-->
             <td>
                 <script language="JavaScript">document.write("#1".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(0)">Play/Stop</button>
                 <input id="slider120_0" type="range" min="0" max="6" step="1" value="0" onchange="showValue(0)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
             <!--#2-->
             <td>
                 <script language="JavaScript">document.write("#2".bold())</script>
-                <button style="width: 80px; height: 40px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
+                <button style="width: 70px; height: 30px" onclick="AudioButtonFunc2(1)">Play/Stop</button>
                 <input id="slider120_1" type="range" min="0" max="6" step="1" value="0" onchange="showValue(1)" />
                 <!--<button style="width: 50px; height: 30px" onclick="OkButtonFunc2()">OK!</button>-->
             </td>
@@ -4686,7 +4687,7 @@
 
     <!--最後に回答をファイルに保存-->
     <p class="ls_double"><br /></p>
-    <button onclick="saveFunc();">FINISH</button>
+    <button style="width: 100px; height: 40px; font-size:16px;" onclick="saveFunc();">FINISH</button>
     <a id="anchor" href=""></a>
 </body>
 </html>

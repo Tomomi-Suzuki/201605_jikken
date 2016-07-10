@@ -60,7 +60,6 @@ function loadSound1(n_audio) {
     var audioname = readFile + ".wav";
     audioArray1[n_audio] = new Audio(audioname);
     audioArray1[n_audio].load();
-    debugShowLog(filePlaying);
 }
 function loadSound2(n_audio) {
     n_file = filePlaying - trialNum[0];
@@ -69,7 +68,6 @@ function loadSound2(n_audio) {
         var audioname = readFile + point[n_audio][n_file][n] + ".wav";
         audioArray2[n_audio][n] = new Audio(audioname);
         audioArray2[n_audio][n].load();
-        debugShowLog(filePlaying);
     }
 }
 
@@ -90,7 +88,7 @@ function saveAns2Array1() {
 }   // END saveAnsFunc
 function saveAns2Array2() {
     var fileNum = filePlaying + 1;
-
+    var fileAns = filePlaying + 1;
     // Save efficiency value
     if (fileAns < 10) {
         var nameOpt = "selectEf00" + fileAns;
@@ -102,23 +100,6 @@ function saveAns2Array2() {
     debugShowLog(nameOpt);
     var idOpt = document.getElementById(nameOpt);
     selectAns[filePlaying][0] = idOpt.options[idOpt.selectedIndex].value;
-
-    // Save sliders' value
-    if (fileNum < 10) {
-        var nameSld = "slider0" + fileNum;
-    } else {
-        var nameSld = "slider" + fileNum;
-    }
-    for (n = 0; n <= 1; ++n) {
-        nameSld = nameSld + "_" + n;
-        var idSld = document.getElementById(nameSld);
-        sldNum = idSld.value;
-        selectAns[filePlaying][n + 1] = point[filePlaying][n][sldNum];
-    }
-
-    //for (var n = 0; n < cmpNum; ++n) {
-    //    selectAns[filePlaying][n + 1] = playNum[n];
-    //}
     debugShowLog(selectAns[filePlaying]);
 }   // END saveAnsFunc
 
@@ -130,8 +111,8 @@ function saveArrayVal1(n_type, n_playing) {
             audioArray1[n_audio].pause();
             audioPlaying[n_audio] = false;
         }
-        debugShowLog(audioPlaying);
     }
+    debugShowLog(audioPlaying);
     var AnsFill = 0;
     for (var n = 0; n < quesNum[n_type]; ++n) {
         if (selectAns[n_playing][n] != null) {
@@ -146,19 +127,23 @@ function saveArrayVal1(n_type, n_playing) {
         } if (filePlaying == trialNum[n_type]) {
             iniFunc();
         }
+        debugShowLog("Answers filled!");
     } else {
         alert("Select answer!");
     }
 }   // END saveAnsFunc
 function saveArrayVal2(n_type, n_playing) {
-    n_playing = n_playing - 1;
+    n_playing = n_playing - 1 + trialNum[0];
     for (n_audio = 0; n_audio <= 1; ++n_audio) {
-        if (audioPlaying[n_audio] == true) {
-            audioArray1[n_audio].pause();
-            audioPlaying[n_audio] = false;
+        for (var n = 0; n < ptnNum; ++n) {
+            if (audioPlaying[n_audio][n] == true) {
+                audioArray2[n_audio][n].pause();
+            }
         }
-        debugShowLog(audioPlaying);
+        audioPlaying[n_audio] = false;
     }
+    debugShowLog(audioPlaying);
+
     var AnsFill = 0;
     for (var n = 0; n < quesNum[n_type]; ++n) {
         if (selectAns[n_playing][n] != null) {
@@ -172,6 +157,7 @@ function saveArrayVal2(n_type, n_playing) {
             loadSound2(0);
             loadSound2(1);
         }
+        debugShowLog("Answers filled!");
     } else {
         alert("Select answer!");
     }
@@ -188,7 +174,7 @@ function saveFunc() {
     }
 }   // END saveFunc
 
-// Show slider position
+// Show/save slider position
 function showValue(n_audio) {
     var fileAns = filePlaying + 1;
     if (fileAns < 10) {
@@ -202,4 +188,7 @@ function showValue(n_audio) {
     var idSld = document.getElementById(nameSld);
     playNum[n_audio] = idSld.value;
     ChangeVolume(n_audio);
+
+    selectAns[filePlaying][n_audio + 1] = point[n_audio][filePlaying - trialNum[0]][playNum[n_audio]];
+    debugShowLog(selectAns[filePlaying]);
 }
